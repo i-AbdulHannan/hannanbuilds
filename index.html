@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdul Hannan — Product Engineer, Founder of VisionBuild, building workroom. 100+ projects shipped, 7+ hackathon wins.">
+  <title>Abdul Hannan — Product Engineer</title>
+  <link rel="preconnect" href="/assets/fonts" crossorigin>
+  <link rel="stylesheet" href="/src/css/main.css">
+  <script type="module" src="/src/js/main.js" defer></script>
+</head>
+<body>
+
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <canvas id="preloader-canvas"></canvas>
+    <div class="preloader__counter" id="preloader-counter">0%</div>
+    <button class="preloader__skip" id="preloader-skip" aria-label="Skip preloader animation">Skip →</button>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Back to top">AH</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about" class="nav__link" data-section="about">About</a></li>
+        <li><a href="#services" class="nav__link" data-section="services">Services</a></li>
+        <li><a href="#work" class="nav__link" data-section="work">Work</a></li>
+        <li><a href="#experience" class="nav__link" data-section="experience">Experience</a></li>
+        <li><a href="#skills" class="nav__link" data-section="skills">Skills</a></li>
+        <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <div class="hero__layout">
+          <div class="hero__text">
+            <div class="hero__eyebrow-wrap">
+              <span class="hero__eyebrow-line" aria-hidden="true"></span>
+              <p class="hero__eyebrow">PRODUCT ENGINEER · KARACHI, PAKISTAN</p>
+            </div>
+            <h1 class="hero__headline">
+              I build software<br>that businesses <span class="text-brand">actually</span> use.
+            </h1>
+            <p class="hero__subhead">
+              Founder of VisionBuild. Currently building workroom.<br>
+              100+ projects shipped, 7+ hackathon wins, zero patience<br>
+              for software that never ships.
+            </p>
+            <div class="hero__ctas">
+              <a href="#work" class="btn btn--primary magnetic-btn"><span>See the work ↓</span></a>
+              <a href="mailto:projects.abdulhannan@gmail.com" class="btn btn--text">Let's talk → projects.abdulhannan@gmail.com</a>
+            </div>
+            <div class="hero__stats-row">
+              <div class="hero__stat">
+                <span class="hero__stat-num">100+</span>
+                <span class="hero__stat-label">Projects Shipped</span>
+              </div>
+              <div class="hero__stat-divider" aria-hidden="true"></div>
+              <div class="hero__stat">
+                <span class="hero__stat-num">7+</span>
+                <span class="hero__stat-label">Hackathon Wins</span>
+              </div>
+              <div class="hero__stat-divider" aria-hidden="true"></div>
+              <div class="hero__stat">
+                <span class="hero__stat-num">4</span>
+                <span class="hero__stat-label">Years Building</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__photo">
+              <img src="/assets/photo.png" alt="Abdul Hannan" class="hero__photo-img">
+            <!-- <div class="hero__photo-placeholder">
+              <span class="hero__photo-letter">AH</span>
+              <span class="hero__photo-label">Your Photo Here</span>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span class="hero__scroll-text">SCROLL</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__num">01</span>
+          <p class="section__label">ABOUT</p>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="about">
+          <div class="about__left">
+            <h2 class="about__heading reveal-text">The story behind<br>the code.</h2>
+            <div class="about__3d" aria-hidden="true">
+              <canvas id="about3d-canvas"></canvas>
+            </div>
+          </div>
+          <div class="about__right">
+            <div class="about__text reveal-text">
+              <p>I taught myself to code in 2022. No CS degree, no bootcamp promising a six-figure job in twelve weeks — just a laptop and a problem worth solving. By 2023, I'd turned that into an actual career: Aptech, a Saylani training program, and freelance PHP work that never stopped. Since going professional, I've shipped over 100 projects and picked up 7 hackathon wins along the way.</p>
+              <p>Today I run VisionBuild, a software agency based in Karachi. We build for the businesses everyone else skips past — small clinics, local SMBs, and founders who need a working product instead of another meeting. No framework for the sake of a framework, no infrastructure bill nobody asked for — I build in PHP, MySQL, Tailwind, and vanilla JavaScript, because the businesses I build for run on shared hosting, not venture capital.</p>
+              <p>Right now, most of my time goes into workroom — a client transparency and project management tool I'm building because I was tired of running client updates over WhatsApp threads that disappear the moment someone scrolls.</p>
+            </div>
+            <div class="about__stats">
+              <div class="stat" data-count="100">
+                <span class="stat__number">0</span>
+                <span class="stat__suffix">+</span>
+                <span class="stat__label">Projects shipped</span>
+              </div>
+              <div class="stat" data-count="7">
+                <span class="stat__number">0</span>
+                <span class="stat__suffix">+</span>
+                <span class="stat__label">Hackathons won</span>
+              </div>
+              <div class="stat" data-count="4">
+                <span class="stat__number">0</span>
+                <span class="stat__suffix"></span>
+                <span class="stat__label">Years building</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="section section--alt" id="services">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__num">02</span>
+          <p class="section__label">SERVICES</p>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <h2 class="services__heading reveal-text">What I can build<br>for you.</h2>
+        <div class="services__grid">
+          <div class="service-card reveal-card">
+            <span class="service-card__num">01</span>
+            <h3 class="service-card__title">SaaS Products</h3>
+            <p class="service-card__desc">End-to-end SaaS platforms — from database architecture to pixel-perfect dashboards. Multi-tenant, role-based, built to scale on shared hosting without enterprise bills.</p>
+            <div class="service-card__tags">
+              <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Full Stack</span>
+            </div>
+          </div>
+          <div class="service-card reveal-card">
+            <span class="service-card__num">02</span>
+            <h3 class="service-card__title">WordPress Websites</h3>
+            <p class="service-card__desc">Professional WordPress sites — PSD to WordPress, custom themes, WooCommerce stores, business sites. Pixel-perfect conversions, fast load times, SEO-ready from day one.</p>
+            <div class="service-card__tags">
+              <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">Custom Themes</span>
+            </div>
+          </div>
+          <div class="service-card reveal-card">
+            <span class="service-card__num">03</span>
+            <h3 class="service-card__title">Custom Code Websites</h3>
+            <p class="service-card__desc">Hand-coded websites built from scratch — no templates, no bloat. PHP, vanilla JavaScript, Tailwind CSS. Fast, lightweight, and built exactly the way you need it.</p>
+            <div class="service-card__tags">
+              <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="service-card reveal-card">
+            <span class="service-card__num">04</span>
+            <h3 class="service-card__title">AI Integration</h3>
+            <p class="service-card__desc">Embed AI into existing workflows — symptom checkers, smart dashboards, automation pipelines. Not gimmicks, not chatbot wrappers. Real AI that solves real business problems.</p>
+            <div class="service-card__tags">
+              <span class="tag">AI Integration</span><span class="tag">Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="service-card reveal-card">
+            <span class="service-card__num">05</span>
+            <h3 class="service-card__title">Web Applications</h3>
+            <p class="service-card__desc">Custom web apps for clinics, SMBs, agencies — systems that replace WhatsApp chaos with actual dashboards. Built fast, built to last, built on tech that runs on $5 hosting.</p>
+            <div class="service-card__tags">
+              <span class="tag">JavaScript</span><span class="tag">Tailwind CSS</span><span class="tag">MySQL</span>
+            </div>
+          </div>
+          <div class="service-card reveal-card">
+            <span class="service-card__num">06</span>
+            <h3 class="service-card__title">Product Consulting</h3>
+            <p class="service-card__desc">From idea to shipped product — architecture decisions, tech stack selection, MVP scoping. I've done it 100+ times. I know what ships and what sinks.</p>
+            <div class="service-card__tags">
+              <span class="tag">System Architecture</span><span class="tag">Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WORK ==================== -->
+    <section class="section" id="work">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__num">03</span>
+          <p class="section__label">WORK</p>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <h2 class="work__heading reveal-text">Selected projects<br>that shipped.</h2>
+        <div class="work__grid">
+          <article class="project-card reveal-card" data-tilt>
+            <div class="project-card__glow" aria-hidden="true"></div>
+            <div class="project-card__content">
+              <div class="project-card__top">
+                <span class="project-card__num">01</span>
+                <span class="project-card__status">Shipped</span>
+              </div>
+              <h3 class="project-card__title">ClinicFlow Pro</h3>
+              <p class="project-card__desc">Clinic management platform built for Pakistan's healthcare sector. 42+ modules across four role-based dashboards, an AI symptom checker, and WhatsApp integration for patient communication. Built on PHP and MySQL.</p>
+              <div class="project-card__tags">
+                <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">AI Integration</span><span class="tag">Healthcare</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal-card" data-tilt>
+            <div class="project-card__glow" aria-hidden="true"></div>
+            <div class="project-card__content">
+              <div class="project-card__top">
+                <span class="project-card__num">02</span>
+                <span class="project-card__status">Shipped</span>
+              </div>
+              <h3 class="project-card__title">Talent Tree</h3>
+              <p class="project-card__desc">A student job platform connecting students with real opportunities. Reached 12,000+ organic users with zero paid acquisition.</p>
+              <div class="project-card__tags">
+                <span class="tag">SaaS</span><span class="tag">Student Platform</span><span class="tag">Growth</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal-card" data-tilt>
+            <div class="project-card__glow" aria-hidden="true"></div>
+            <div class="project-card__content">
+              <div class="project-card__top">
+                <span class="project-card__num">03</span>
+                <span class="project-card__status project-card__status--active">In Development</span>
+              </div>
+              <h3 class="project-card__title">workroom</h3>
+              <p class="project-card__desc">A real-time client transparency and project management dashboard — replacing the WhatsApp-thread chaos most agencies and freelancers still run client updates through. In active development.</p>
+              <div class="project-card__tags">
+                <span class="tag">PHP 8.2</span><span class="tag">MySQL</span><span class="tag">In Development</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section class="section section--alt" id="experience">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__num">04</span>
+          <p class="section__label">EXPERIENCE</p>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="experience">
+          <div class="experience__left">
+            <h2 class="experience__heading reveal-text">Where I've<br>been.</h2>
+          </div>
+          <div class="experience__right">
+            <div class="timeline">
+              <div class="timeline__line" aria-hidden="true"><div class="timeline__line-fill"></div></div>
+              <div class="timeline__item reveal-item">
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <div class="timeline__content">
+                  <p class="timeline__role">Founder & Product Engineer — workroom</p>
+                  <p class="timeline__date">May 2026–Present</p>
+                  <p class="timeline__desc">Building an AI-powered workspace that helps businesses manage work, clients, and everyday operations from one place.</p>
+                </div>
+              </div>
+              <div class="timeline__item reveal-item">
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <div class="timeline__content">
+                  <p class="timeline__role">Founder & CEO — VisionBuild</p>
+                  <p class="timeline__date">May 2024–Present</p>
+                  <p class="timeline__desc">Running product, sales, and delivery for a software agency building SaaS and AI-integrated software for founders and SMBs across Pakistan.</p>
+                </div>
+              </div>
+              <div class="timeline__item reveal-item">
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <div class="timeline__content">
+                  <p class="timeline__role">Modern Web Application Developer — S.M.I.T (Saylani Mass IT Training)</p>
+                  <p class="timeline__date">Feb–Jul 2025</p>
+                  <p class="timeline__desc">Apprenticeship building modern web applications, Karachi.</p>
+                </div>
+              </div>
+              <div class="timeline__item reveal-item">
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <div class="timeline__content">
+                  <p class="timeline__role">WordPress Developer — BrightCraft Digital</p>
+                  <p class="timeline__date">Sep 2024–Apr 2025</p>
+                  <p class="timeline__desc">PSD-to-WordPress conversion and full site builds, remote.</p>
+                </div>
+              </div>
+              <div class="timeline__item reveal-item">
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <div class="timeline__content">
+                  <p class="timeline__role">Full Stack Engineer — Debugging Bugz</p>
+                  <p class="timeline__date">Oct 2022–Jun 2024</p>
+                  <p class="timeline__desc">PHP and MySQL application development, part-time, remote.</p>
+                </div>
+              </div>
+              <div class="timeline__item reveal-item">
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <div class="timeline__content">
+                  <p class="timeline__role">PHP Web Application Developer — Debugging Bugz</p>
+                  <p class="timeline__date">Feb 2022–Aug 2022</p>
+                  <p class="timeline__desc">Early freelance PHP work while self-teaching — the foundation before going professional in 2023.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section" id="skills">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__num">05</span>
+          <p class="section__label">SKILLS & STACK</p>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="skills">
+          <div class="skills__left">
+            <h2 class="skills__heading reveal-text">Tools of<br>the trade.</h2>
+          </div>
+          <div class="skills__right">
+            <div class="skills__category reveal-card">
+              <h3 class="skills__cat-title">Languages & Frameworks</h3>
+              <div class="skills__items">
+                <div class="skill-item"><span class="skill-item__name">PHP 8.2</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="95"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">JavaScript</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="90"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">MySQL</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="92"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">Tailwind CSS</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="95"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">WordPress</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="88"></div></div></div>
+              </div>
+            </div>
+            <div class="skills__category reveal-card">
+              <h3 class="skills__cat-title">Tools & Platforms</h3>
+              <div class="skills__items">
+                <div class="skill-item"><span class="skill-item__name">AI Integration</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="85"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">System Architecture</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="88"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">Prompt Engineering</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="82"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">GSAP</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="80"></div></div></div>
+                <div class="skill-item"><span class="skill-item__name">Three.js</span><div class="skill-item__bar"><div class="skill-item__fill" data-width="75"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STACK MARQUEE ==================== -->
+    <section class="marquee-section" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="marquee__item">PHP 8.2</span>
+          <span class="marquee__item">MySQL</span>
+          <span class="marquee__item">Tailwind CSS</span>
+          <span class="marquee__item">JavaScript</span>
+          <span class="marquee__item">WordPress</span>
+          <span class="marquee__item">AI Integration</span>
+          <span class="marquee__item">System Architecture</span>
+          <span class="marquee__item">Prompt Engineering</span>
+          <span class="marquee__item">GSAP</span>
+          <span class="marquee__item">Three.js</span>
+          <span class="marquee__item">PHP 8.2</span>
+          <span class="marquee__item">MySQL</span>
+          <span class="marquee__item">Tailwind CSS</span>
+          <span class="marquee__item">JavaScript</span>
+          <span class="marquee__item">WordPress</span>
+          <span class="marquee__item">AI Integration</span>
+          <span class="marquee__item">System Architecture</span>
+          <span class="marquee__item">Prompt Engineering</span>
+          <span class="marquee__item">GSAP</span>
+          <span class="marquee__item">Three.js</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__num">06</span>
+          <p class="section__label">CONTACT</p>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="contact">
+          <div class="contact__left">
+            <h2 class="contact__heading reveal-text">Building something<br>that needs to<br>actually get built?</h2>
+          </div>
+          <div class="contact__right">
+            <p class="contact__body reveal-text">If you're stuck between "needs more meetings" and "needs to just ship," that's the kind of problem I want to hear about.</p>
+            <a href="mailto:projects.abdulhannan@gmail.com" class="contact__email reveal-text">projects.abdulhannan@gmail.com</a>
+            <div class="contact__links reveal-text">
+              <a href="https://www.linkedin.com/in/abdulhannan-projects/" target="_blank" rel="noopener noreferrer" class="contact__link">LinkedIn</a>
+              <a href="https://instagram.com/hannanBuilds" target="_blank" rel="noopener noreferrer" class="contact__link">Instagram (@hannanBuilds)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__text">© 2024- PRESENT & All Right Reserved by Abdul Hannan</p>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

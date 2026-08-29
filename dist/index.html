@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdul Hannan — Product Engineer, Founder of VBuild, building workroom. 100+ projects shipped, 7+ hackathon wins.">
+  <title>Abdul Hannan — Product Engineer</title>
+  <link rel="preconnect" href="/assets/fonts" crossorigin>
+  <script type="module" crossorigin src="/assets/index-B9BDMiLY.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/gsap-Cgjl6ODA.js">
+  <link rel="modulepreload" crossorigin href="/assets/three-BrIwhgsb.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BKSH0X-Q.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <canvas id="preloader-canvas"></canvas>
+    <div class="preloader__counter" id="preloader-counter">0%</div>
+    <button class="preloader__skip" id="preloader-skip" aria-label="Skip preloader animation">Skip →</button>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Back to top">AH</a>
+      <ul class="nav__links">
+        <li><a href="#about" class="nav__link" data-section="about"><span class="nav__link-label">01</span> About</a></li>
+        <li><a href="#work" class="nav__link" data-section="work"><span class="nav__link-label">02</span> Work</a></li>
+        <li><a href="#experience" class="nav__link" data-section="experience"><span class="nav__link-label">03</span> Experience</a></li>
+        <li><a href="#stack" class="nav__link" data-section="stack"><span class="nav__link-label">04</span> Stack</a></li>
+        <li><a href="#contact" class="nav__link" data-section="contact"><span class="nav__link-label">05</span> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">PRODUCT ENGINEER · KARACHI, PAKISTAN</p>
+        <h1 class="hero__headline">
+          I build software that businesses <span class="text-brand">actually</span> use.
+        </h1>
+        <p class="hero__subhead">
+          Founder of VBuild. Currently building workroom. 100+ projects shipped, 7+ hackathon wins, zero patience for software that never ships.
+        </p>
+        <div class="hero__ctas">
+          <a href="#work" class="btn btn--primary magnetic-btn"><span>See the work ↓</span></a>
+          <a href="mailto:projects.abdulhannan@gmail.com" class="btn btn--text">Let's talk → projects.abdulhannan@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Coding Visual -->
+    <div class="hero-3d-section" aria-hidden="true">
+      <canvas id="hero3d-canvas"></canvas>
+    </div>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="section__container">
+        <p class="section__label">01 / ABOUT</p>
+        <div class="about__content">
+          <div class="about__text reveal-text">
+            <p>In February 2022, I shipped my first PHP project as a freelancer. No CS degree, no bootcamp promising a six-figure job in twelve weeks — just a laptop and a problem worth solving. Three years, one Aptech diploma, and a Saylani training program later, I've shipped over 100 projects and picked up 7 hackathon wins along the way.</p>
+            <p>Today I run VBuild, a product engineering studio based in Karachi. We build for the businesses everyone else skips past — small clinics, local SMBs, and founders who need a working product instead of another meeting. No framework for the sake of a framework, no infrastructure bill nobody asked for — I build in PHP, MySQL, Tailwind, and vanilla JavaScript, because the businesses I build for run on shared hosting, not venture capital.</p>
+            <p>Right now, most of my time goes into workroom — a client transparency and project management tool I'm building because I was tired of running client updates over WhatsApp threads that disappear the moment someone scrolls.</p>
+          </div>
+          <div class="about__stats">
+            <div class="stat" data-count="100">
+              <span class="stat__number">0</span>
+              <span class="stat__plus">+</span>
+              <span class="stat__label">Projects shipped</span>
+            </div>
+            <div class="stat" data-count="7">
+              <span class="stat__number">0</span>
+              <span class="stat__plus">+</span>
+              <span class="stat__label">Hackathons won</span>
+            </div>
+            <div class="stat" data-count="4">
+              <span class="stat__number">0</span>
+              <span class="stat__plus"></span>
+              <span class="stat__label">Years building</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section work" id="work">
+      <div class="section__container">
+        <p class="section__label">02 / WORK</p>
+        <div class="work__grid">
+          <article class="project-card reveal-card" data-tilt>
+            <div class="project-card__glow" aria-hidden="true"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">ClinicFlow Pro</h3>
+              <p class="project-card__desc">Clinic management platform built for Pakistan's healthcare sector. 42+ modules across four role-based dashboards, an AI symptom checker, and WhatsApp integration for patient communication. Built on PHP and MySQL.</p>
+              <div class="project-card__tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">AI Integration</span>
+                <span class="tag">Healthcare</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal-card" data-tilt>
+            <div class="project-card__glow" aria-hidden="true"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Talent Tree</h3>
+              <p class="project-card__desc">A student job platform connecting students with real opportunities. Reached 5,000 organic users in its first year with zero paid acquisition.</p>
+              <div class="project-card__tags">
+                <span class="tag">SaaS</span>
+                <span class="tag">Student Platform</span>
+                <span class="tag">Growth</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal-card" data-tilt>
+            <div class="project-card__glow" aria-hidden="true"></div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">workroom</h3>
+              <p class="project-card__desc">A real-time client transparency and project management dashboard — replacing the WhatsApp-thread chaos most agencies and freelancers still run client updates through. In active development.</p>
+              <div class="project-card__tags">
+                <span class="tag">PHP 8.2</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">In Development</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section experience" id="experience">
+      <div class="section__container">
+        <p class="section__label">03 / EXPERIENCE</p>
+        <div class="timeline">
+          <div class="timeline__line" aria-hidden="true"><div class="timeline__line-fill"></div></div>
+          <div class="timeline__item reveal-item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <p class="timeline__role">Founder & Product Engineer — workroom</p>
+              <p class="timeline__date">May 2026–Present</p>
+              <p class="timeline__desc">Building an AI-powered workspace that helps businesses manage work, clients, and everyday operations from one place.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <p class="timeline__role">Co-Founder & CEO — VBuild</p>
+              <p class="timeline__date">May 2024–Present</p>
+              <p class="timeline__desc">Running product, sales, and delivery for a studio building SaaS and AI-integrated software for founders and SMBs across Pakistan.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <p class="timeline__role">Modern Web Application Developer — S.M.I.T (Saylani Mass IT Training)</p>
+              <p class="timeline__date">Feb–Jul 2025</p>
+              <p class="timeline__desc">Apprenticeship building modern web applications, Karachi.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <p class="timeline__role">WordPress Developer — BrightCraft Digital</p>
+              <p class="timeline__date">Sep 2024–Apr 2025</p>
+              <p class="timeline__desc">PSD-to-WordPress conversion and full site builds, remote.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <p class="timeline__role">Full Stack Engineer — Debugging Bugz</p>
+              <p class="timeline__date">Oct 2022–Jun 2024</p>
+              <p class="timeline__desc">PHP and MySQL application development, part-time, remote.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <p class="timeline__role">PHP Web Application Developer — Debugging Bugz</p>
+              <p class="timeline__date">Feb 2022–Aug 2022</p>
+              <p class="timeline__desc">First professional PHP role — where it started.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Stack -->
+    <section class="section marquee-section" id="stack">
+      <div class="section__container">
+        <p class="section__label">04 / STACK</p>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__item">PHP 8.2</span>
+          <span class="marquee__item">MySQL</span>
+          <span class="marquee__item">Tailwind CSS</span>
+          <span class="marquee__item">JavaScript</span>
+          <span class="marquee__item">WordPress</span>
+          <span class="marquee__item">AI Integration</span>
+          <span class="marquee__item">System Architecture</span>
+          <span class="marquee__item">Prompt Engineering</span>
+          <span class="marquee__item">GSAP</span>
+          <span class="marquee__item">Three.js</span>
+          <span class="marquee__item">PHP 8.2</span>
+          <span class="marquee__item">MySQL</span>
+          <span class="marquee__item">Tailwind CSS</span>
+          <span class="marquee__item">JavaScript</span>
+          <span class="marquee__item">WordPress</span>
+          <span class="marquee__item">AI Integration</span>
+          <span class="marquee__item">System Architecture</span>
+          <span class="marquee__item">Prompt Engineering</span>
+          <span class="marquee__item">GSAP</span>
+          <span class="marquee__item">Three.js</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="section__container">
+        <p class="section__label">05 / CONTACT</p>
+        <div class="contact__content">
+          <h2 class="contact__headline reveal-text">Building something that needs to actually get built?</h2>
+          <p class="contact__body reveal-text">If you're stuck between "needs more meetings" and "needs to just ship," that's the kind of problem I want to hear about.</p>
+          <a href="mailto:projects.abdulhannan@gmail.com" class="contact__email reveal-text">projects.abdulhannan@gmail.com</a>
+          <div class="contact__links reveal-text">
+            <a href="https://linkedin.com/in/abdulhannanprojects" target="_blank" rel="noopener noreferrer" class="contact__link">LinkedIn</a>
+            <a href="https://instagram.com/_visionbuild" target="_blank" rel="noopener noreferrer" class="contact__link">VBuild (@_visionbuild)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__text">© 2026 Abdul Hannan — Built with Three.js, GSAP, and too much coffee.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
