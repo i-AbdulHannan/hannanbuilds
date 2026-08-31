@@ -1,21 +1,7 @@
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
+// https://vite.dev/config/
 export default defineConfig({
-  root: '.',
-  publicDir: 'public',
-  build: {
-    outDir: 'dist',
-    assetsInlineLimit: 0,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules/three')) return 'three'
-          if (id.includes('node_modules/gsap')) return 'gsap'
-        }
-      }
-    }
-  },
-  server: {
-    open: true
-  }
+  plugins: [react()],
 })
