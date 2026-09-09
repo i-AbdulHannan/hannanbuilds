@@ -1,171 +1,198 @@
-import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, ExternalLink, ArrowRight, MessageCircle } from 'lucide-react'
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-const INSTAGRAM = 'https://instagram.com/hannanbuilds'
-const LINKEDIN = 'https://www.linkedin.com/in/abdulhannan-projects'
+const Contact = () => {
+  const ref = useRef(null);
+  
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: '',
+    permission: false
+  });
 
-const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '+92 317 1243725', href: 'tel:+923171243725' },
-  { icon: Mail, label: 'Email', value: 'projects.abdulhannan@gmail.com', href: 'mailto:projects.abdulhannan@gmail.com' },
-  { icon: MapPin, label: 'Location', value: 'Karachi, Sindh, Pakistan', href: null },
-]
+  const [formStatus, setFormStatus] = useState(null);
 
-export default function Contact() {
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "30%"]);
+
+  const handleChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.permission) {
+      setFormStatus({ type: 'error', message: 'Please check the permission checkbox before sending.' });
+      return;
+    }
+
+    console.log("Form Data Submitted:", formData);
+    setFormStatus({ type: 'success', message: `Thank you ${formData.firstName}! Your message has been sent successfully.` });
+    
+    setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '', permission: false });
+  };
+
   return (
-    <>
-      {/* CTA */}
-      <section style={{
-        padding: '120px 0', background: '#000', color: '#fff',
-        textAlign: 'center', position: 'relative', overflow: 'hidden',
-      }}>
-        <div style={{
-          position: 'absolute', top: -200, left: '50%', transform: 'translateX(-50%)',
-          width: 600, height: 600,
-          background: 'radial-gradient(circle, rgba(3,38,252,0.08) 0%, transparent 70%)',
-          borderRadius: '50%', pointerEvents: 'none',
-        }} />
+    <section ref={ref} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex flex-col items-center justify-center pt-24 sm:pt-32 pb-12 sm:pb-16 border-t border-gray-900 px-4 sm:px-6 md:px-12">
+      
+      {/* Background Parallax Text */}
+      <motion.div 
+        style={{ y }}
+        className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-12 sm:pt-16"
+      >
+        <h1 
+          className="text-[20vw] sm:text-[25vw] leading-[0.75] font-black text-white uppercase tracking-tighter select-none scale-y-[1.6] origin-top opacity-20"
+          style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}
+        >
+          Contact
+        </h1>
+      </motion.div>
 
-        <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 2 }}>
-          <motion.div initial={{ y: 40, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
-            <div className="section-label" style={{ justifyContent: 'center', color: '#0326fc' }}>Let's Collaborate</div>
-            <h2 className="section-title" style={{ color: '#fff' }}>Have an idea?<br />Let's build it.</h2>
-            <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.5)', maxWidth: 480, margin: '24px auto 48px', lineHeight: 1.8 }}>
-              If you are building something and need someone who can take it from idea to launch, let us talk.
-            </p>
-            <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <motion.a href={INSTAGRAM} target="_blank" rel="noopener noreferrer"
-                whileHover={{ y: -3, boxShadow: '0 12px 40px rgba(3,38,252,0.35)' }}
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: '#0326fc', color: '#fff', fontSize: 15, fontWeight: 600,
-                  padding: '16px 36px', borderRadius: 100,
-                  boxShadow: '0 4px 20px rgba(3,38,252,0.3)',
-                }}
-              >
-                Get in Touch <ArrowRight size={16} />
-              </motion.a>
-              <motion.a href="tel:+923171243725"
-                whileHover={{ y: -3, borderColor: '#fff' }}
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'transparent', color: '#fff', fontSize: 15, fontWeight: 600,
-                  padding: '16px 36px', borderRadius: 100,
-                  border: '1.5px solid rgba(255,255,255,0.12)',
-                }}
-              >
-                Call Me <MessageCircle size={16} />
-              </motion.a>
+      {/* Form Card - Centered */}
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="bg-[#0326fc] w-full max-w-5xl p-6 sm:p-8 md:p-12 lg:p-16 text-white flex flex-col justify-between rounded-2xl sm:rounded-3xl shadow-2xl relative z-10"
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 border-b border-white/20 pb-5 sm:pb-6">
+          <div>
+            <div className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase opacity-90 mb-1">
+              Got Ideas? I've got the skills. Let's team up.
             </div>
-          </motion.div>
-        </div>
-      </section>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">Let's Discuss Your Project</h2>
+            <p className="text-[10px] sm:text-xs text-white/80 mt-1 font-medium">Tell me more about yourself and what you've got in mind.</p>
+          </div>
 
-      {/* Contact Info */}
-      <section id="contact" style={{ padding: '120px 0', background: 'var(--bg)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80 }} className="contact-grid">
-            <motion.div initial={{ y: 40, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
-              <div className="section-label">Contact</div>
-              <h2 className="section-title">Get in touch</h2>
-              <p className="section-desc" style={{ marginTop: 16 }}>Ready to start your project? Reach out through any of these channels.</p>
-              <div style={{ display: 'flex', gap: 12, marginTop: 40 }}>
-                {[
-                  { icon: <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>, href: INSTAGRAM },
-                  { icon: <Mail size={18} />, href: 'mailto:projects.abdulhannan@gmail.com' },
-                  { icon: <Phone size={18} />, href: 'tel:+923171243725' },
-                ].map((s, i) => (
-                  <motion.a key={i} href={s.href} target={i === 0 ? '_blank' : undefined}
-                    whileHover={{ y: -3, background: '#0326fc', borderColor: '#0326fc', color: '#fff' }}
-                    style={{
-                      width: 48, height: 48,
-                      border: '1.5px solid var(--border)',
-                      borderRadius: '50%', display: 'flex',
-                      alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--text-secondary)', transition: 'all 0.3s ease',
-                    }}
-                  >
-                    {s.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-
-            <div>
-              {contactInfo.map((c, i) => {
-                const Icon = c.icon
-                return (
-                  <motion.div key={i}
-                    initial={{ x: 30, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    style={{
-                      display: 'flex', alignItems: 'flex-start', gap: 20,
-                      padding: '24px 0',
-                      borderBottom: i < contactInfo.length - 1 ? '1px solid var(--border)' : 'none',
-                    }}
-                  >
-                    <div style={{
-                      width: 48, height: 48,
-                      background: 'rgba(3,38,252,0.08)',
-                      borderRadius: 12, display: 'flex',
-                      alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                    }}>
-                      <Icon size={20} color="#0326fc" />
-                    </div>
-                    <div>
-                      <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 4 }}>{c.label}</div>
-                      <div style={{ fontSize: 16, fontWeight: 600 }}>
-                        {c.href ? (
-                          <a href={c.href} target="_blank" rel="noopener noreferrer"
-                            style={{ textDecoration: 'none', color: 'inherit', transition: 'color 0.3s ease' }}
-                            onMouseEnter={e => e.target.style.color = '#0326fc'}
-                            onMouseLeave={e => e.target.style.color = 'inherit'}
-                          >{c.value}</a>
-                        ) : c.value}
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              })}
-
-              {/* Instagram & LinkedIn */}
-              <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}
-                style={{
-                  display: 'flex', alignItems: 'flex-start', gap: 20,
-                  padding: '24px 0',
-                }}
-              >
-                <div style={{
-                  width: 48, height: 48,
-                  background: 'rgba(3,38,252,0.08)',
-                  borderRadius: 12, display: 'flex',
-                  alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                }}>
-                  <ExternalLink size={20} color="#0326fc" />
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 4 }}>Social</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer"
-                      style={{ fontSize: 15, fontWeight: 600, textDecoration: 'none', color: 'inherit', transition: 'color 0.3s ease' }}
-                      onMouseEnter={e => e.target.style.color = '#0326fc'}
-                      onMouseLeave={e => e.target.style.color = 'inherit'}
-                    >@hannanbuilds</a>
-                    <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
-                      style={{ fontSize: 15, fontWeight: 600, textDecoration: 'none', color: 'inherit', transition: 'color 0.3s ease' }}
-                      onMouseEnter={e => e.target.style.color = '#0326fc'}
-                      onMouseLeave={e => e.target.style.color = 'inherit'}
-                    >linkedin.com/in/abdulhannan-projects</a>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+          <div className="flex flex-wrap gap-2 text-[10px] sm:text-xs font-bold">
+            <a href="mailto:projects.abdulhannan@gmail.com" className="px-3 sm:px-3.5 py-1.5 rounded-full bg-black/30 border border-white/20 hover:bg-white hover:text-black transition-colors break-all">
+              ✉️ projects.abdulhannan@gmail.com
+            </a>
+            <a href="tel:+923171243725" className="px-3 sm:px-3.5 py-1.5 rounded-full bg-black/30 border border-white/20 hover:bg-white hover:text-black transition-colors">
+              📱 +92 317 1243 725
+            </a>
+            <a href="https://www.instagram.com/hannanbuilds/" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-3.5 py-1.5 rounded-full bg-black/30 border border-white/20 hover:bg-white hover:text-black transition-colors">
+              📸 Instagram
+            </a>
           </div>
         </div>
 
-        <style>{`@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; } }`}</style>
-      </section>
-    </>
-  )
-}
+        {formStatus && (
+          <div className={`mb-6 sm:mb-8 p-3 sm:p-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-between ${
+            formStatus.type === 'success' ? 'bg-black text-emerald-400 border border-emerald-500/50' : 'bg-black text-amber-300 border border-amber-500/50'
+          }`}>
+            <span>{formStatus.message}</span>
+            <button onClick={() => setFormStatus(null)} className="text-white text-[10px] sm:text-xs underline ml-2 shrink-0">Dismiss</button>
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-8 md:gap-10 w-full">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-16 w-full">
+            
+            <div className="flex-1 flex flex-col gap-5 sm:gap-6 md:gap-8">
+              <div className="relative">
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="First Name *" 
+                  required
+                  className="w-full bg-transparent border-b border-white/40 pb-2 sm:pb-3 text-base sm:text-lg focus:outline-none focus:border-white transition-colors placeholder-white/80 font-medium rounded-none"
+                />
+              </div>
+              <div className="relative">
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Last Name *" 
+                  required
+                  className="w-full bg-transparent border-b border-white/40 pb-2 sm:pb-3 text-base sm:text-lg focus:outline-none focus:border-white transition-colors placeholder-white/80 font-medium rounded-none"
+                />
+              </div>
+              <div className="relative">
+                <input 
+                  type="email" 
+                  id="email" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email *" 
+                  required
+                  className="w-full bg-transparent border-b border-white/40 pb-2 sm:pb-3 text-base sm:text-lg focus:outline-none focus:border-white transition-colors placeholder-white/80 font-medium rounded-none"
+                />
+              </div>
+            </div>
+
+            <div className="flex-1 flex flex-col gap-5 sm:gap-6 md:gap-8">
+              <div className="relative">
+                <input 
+                  type="text" 
+                  id="subject" 
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Subject *" 
+                  required
+                  className="w-full bg-transparent border-b border-white/40 pb-2 sm:pb-3 text-base sm:text-lg focus:outline-none focus:border-white transition-colors placeholder-white/80 font-medium rounded-none"
+                />
+              </div>
+              <div className="relative h-full flex flex-col">
+                <textarea 
+                  id="message" 
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message / project details *" 
+                  required
+                  className="w-full h-full min-h-[100px] sm:min-h-[120px] bg-transparent border-b border-white/40 pb-2 sm:pb-3 text-base sm:text-lg focus:outline-none focus:border-white transition-colors placeholder-white/80 font-medium resize-none rounded-none"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mt-2 sm:mt-4 items-start sm:items-center justify-between">
+            <div className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-white/90">
+              <input 
+                type="checkbox" 
+                id="permission" 
+                checked={formData.permission}
+                onChange={handleChange}
+                className="mt-1 w-4 h-4 rounded border-white/40 bg-transparent text-black focus:ring-white cursor-pointer shrink-0" 
+                style={{ accentColor: "white" }}
+              />
+              <label htmlFor="permission" className="cursor-pointer max-w-xs sm:max-w-sm leading-snug">
+                I give permission to Abdul Hannan to contact me regarding this inquiry.
+              </label>
+            </div>
+
+            <button 
+              type="submit" 
+              className="px-8 sm:px-10 py-3 sm:py-3.5 rounded-full bg-white text-black font-black flex items-center justify-center gap-2 sm:gap-3 hover:bg-gray-950 hover:text-white transition-all duration-300 group shadow-2xl self-start sm:self-auto text-sm sm:text-base"
+            >
+              Send Message
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+      </motion.div>
+    </section>
+  );
+};
+
+export default Contact;

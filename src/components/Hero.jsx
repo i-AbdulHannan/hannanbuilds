@@ -1,326 +1,170 @@
-import { useRef, useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { gsap } from 'gsap'
-import { ArrowUpRight, Code2, Zap, Trophy } from 'lucide-react'
-import Scene3D from './Scene3D'
+import React, { useRef, useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import heroVideo from '../assets/hero-video/herovideo.mp4';
 
-const INSTAGRAM = 'https://instagram.com/hannanbuilds'
-
-const roles = ['AI Product Engineer', 'Full Stack Developer', 'SaaS Architect', 'WordPress Expert']
-
-function TypeWriter() {
-  const [index, setIndex] = useState(0)
-  const [text, setText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
+const Hero = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
-    const current = roles[index]
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setText(current.substring(0, text.length + 1))
-        if (text === current) setTimeout(() => setIsDeleting(true), 2000)
-      } else {
-        setText(current.substring(0, text.length - 1))
-        if (text === '') {
-          setIsDeleting(false)
-          setIndex((prev) => (prev + 1) % roles.length)
-        }
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out'
+    });
+  }, []);
+
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      const nextMuteState = !videoRef.current.muted;
+      videoRef.current.muted = nextMuteState;
+      setIsMuted(nextMuteState);
+      
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
       }
-    }, isDeleting ? 35 : 70)
-    return () => clearTimeout(timeout)
-  }, [text, isDeleting, index])
+    }
+  };
 
   return (
-    <span style={{ color: '#0326fc' }}>
-      {text}
-      <span style={{
-        display: 'inline-block', width: 3, height: '1.1em',
-        background: '#0326fc', marginLeft: 2,
-        verticalAlign: 'text-bottom',
-        animation: 'blink 1s step-end infinite',
-      }} />
-    </span>
-  )
-}
+    <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-const stats = [
-  { value: '3+', label: 'Years Experience', icon: Zap },
-  { value: '50+', label: 'Projects Delivered', icon: Code2 },
-  { value: '7/11', label: 'Hackathon Wins', icon: Trophy },
-]
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent z-10 pointer-events-none" />
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 2.4 } }
-}
-
-const item = {
-  hidden: { y: 50, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
-}
-
-export default function Hero() {
-  const heroRef = useRef(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo('.hero-stat', { y: 30, opacity: 0 }, {
-        y: 0, opacity: 1, stagger: 0.1, duration: 0.7,
-        ease: 'power3.out', delay: 3.2,
-      })
-    }, heroRef)
-    return () => ctx.revert()
-  }, [])
-
-  return (
-    <section ref={heroRef} style={{
-      minHeight: '100vh', position: 'relative',
-      overflow: 'hidden', background: '#000',
-    }}>
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <Scene3D />
-      </div>
-
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%)',
-        zIndex: 1,
-      }} />
-
-      <div style={{
-        maxWidth: 1200, margin: '0 auto', padding: '140px 24px 80px',
-        position: 'relative', zIndex: 2, width: '100%',
-        minHeight: '100vh', display: 'flex', flexDirection: 'column',
-        justifyContent: 'center',
-      }}>
-        <motion.div variants={container} initial="hidden" animate="show">
-          {/* Badge */}
-          <motion.div variants={item} style={{
-            display: 'inline-flex', alignItems: 'center', gap: 10,
-            background: 'rgba(3,38,252,0.08)',
-            border: '1px solid rgba(3,38,252,0.15)',
-            padding: '7px 18px', borderRadius: 100,
-            fontSize: 12, fontWeight: 500, color: '#0326fc',
-            marginBottom: 32, backdropFilter: 'blur(10px)',
-            letterSpacing: 0.5,
-          }}>
-            <span style={{
-              width: 6, height: 6, background: '#0326fc',
-              borderRadius: '50%', boxShadow: '0 0 8px #0326fc',
-              animation: 'pulse 2s ease-in-out infinite',
-            }} />
-            Available for new projects
-          </motion.div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: 60, flexWrap: 'wrap' }}>
-            {/* Left side: text content */}
-            <div style={{ flex: '1 1 480px' }}>
-              <div style={{ marginBottom: 12 }}>
-                <motion.div variants={item} style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 'clamp(14px, 2vw, 18px)',
-                  fontWeight: 500, color: 'rgba(255,255,255,0.3)',
-                  letterSpacing: 6, textTransform: 'uppercase',
-                  marginBottom: 8,
-                }}>
-                  Hello, I'm
-                </motion.div>
-                <motion.h1 variants={item} style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 'clamp(48px, 8vw, 100px)',
-                  fontWeight: 800, lineHeight: 0.95,
-                  letterSpacing: '-4px', color: '#fff',
-                }}>
-                  Abdul
-                </motion.h1>
-                <motion.h1 variants={item} style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 'clamp(48px, 8vw, 100px)',
-                  fontWeight: 800, lineHeight: 0.95,
-                  letterSpacing: '-4px', color: '#fff',
-                  display: 'flex', alignItems: 'baseline', gap: 16, flexWrap: 'wrap',
-                }}>
-                  Hannan
-                  <span style={{
-                    fontSize: 'clamp(18px, 2.5vw, 28px)',
-                    fontWeight: 600, letterSpacing: '-1px',
-                    color: 'rgba(255,255,255,0.25)',
-                  }}>(hannanbuilds)</span>
-                </motion.h1>
-              </div>
-
-              <motion.div variants={item} style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 'clamp(20px, 3vw, 32px)',
-                fontWeight: 600, marginBottom: 28, height: 44,
-                marginTop: 16,
-              }}>
-                <TypeWriter />
-              </motion.div>
-
-              <motion.p variants={item} style={{
-                fontSize: 'clamp(15px, 1.5vw, 17px)',
-                color: 'rgba(255,255,255,0.5)',
-                maxWidth: 480, lineHeight: 1.8, marginBottom: 40,
-              }}>
-                I build intelligent software, SaaS products and web applications that solve real problems. From idea to launch.
-              </motion.p>
-
-              <motion.div variants={item} style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-                <motion.a href={INSTAGRAM} target="_blank" rel="noopener noreferrer"
-                  whileHover={{ y: -3, boxShadow: '0 12px 40px rgba(3,38,252,0.4)' }}
-                  whileTap={{ scale: 0.98 }}
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 8,
-                    background: '#0326fc', color: '#fff',
-                    fontSize: 15, fontWeight: 600,
-                    padding: '15px 32px', borderRadius: 100,
-                    boxShadow: '0 4px 20px rgba(3,38,252,0.3)',
-                  }}
-                >
-                  Let's Talk <ArrowUpRight size={16} />
-                </motion.a>
-                <motion.a href="#experience"
-                  whileHover={{ y: -3, borderColor: '#fff' }}
-                  whileTap={{ scale: 0.98 }}
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 8,
-                    background: 'transparent', color: '#fff',
-                    fontSize: 15, fontWeight: 600,
-                    padding: '15px 32px', borderRadius: 100,
-                    border: '1.5px solid rgba(255,255,255,0.12)',
-                  }}
-                >
-                  View Work
-                </motion.a>
-              </motion.div>
-            </div>
-
-            {/* Right side: photo */}
-            <motion.div variants={item} className="hero-photo-wrap" style={{
-              width: 340, height: 400, position: 'relative', flexShrink: 0,
-            }}>
-              {/* Background accent */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                borderRadius: 20,
-                background: 'linear-gradient(135deg, rgba(3,38,252,0.08) 0%, rgba(3,38,252,0.02) 100%)',
-                border: '1px solid rgba(3,38,252,0.1)',
-              }} />
-              {/* Photo */}
-              <div style={{
-                position: 'absolute', top: 16, left: 16, right: 16, bottom: 50,
-                borderRadius: 14,
-                background: '#111',
-                overflow: 'hidden',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(3,38,252,0.05)',
-              }}>
-                <img
-                  src="/photo.png"
-                  alt="Abdul Hannan"
-                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-                <div style={{
-                  width: '100%', height: '100%',
-                  background: 'linear-gradient(135deg, #111 0%, #1a1a1a 100%)',
-                  display: 'none', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 64, fontWeight: 800,
-                  color: '#0326fc', letterSpacing: '-3px',
-                }}>AH</div>
-              </div>
-              {/* Bottom label */}
-              <div style={{
-                position: 'absolute', bottom: 16, left: 16, right: 16,
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              }}>
-                <div>
-                  <div style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 14, fontWeight: 700, color: '#fff',
-                  }}>Abdul Hannan</div>
-                  <div style={{
-                    fontSize: 11, color: 'rgba(255,255,255,0.35)', marginTop: 2,
-                  }}>AI Product Engineer</div>
-                </div>
-                <div style={{
-                  width: 8, height: 8, borderRadius: '50%',
-                  background: '#0326fc', boxShadow: '0 0 8px #0326fc',
-                }} />
-              </div>
-              {/* Floating icon */}
-              <motion.div animate={{ y: [-4, 4, -4] }} transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }} style={{
-                position: 'absolute', top: 20, right: -12,
-                width: 36, height: 36, background: '#0326fc',
-                borderRadius: 10, display: 'flex',
-                alignItems: 'center', justifyContent: 'center',
-                boxShadow: '0 4px 20px rgba(3,38,252,0.3)',
-              }}>
-                <Code2 size={16} color="#fff" />
-              </motion.div>
-            </motion.div>
+      <div className="absolute inset-0 z-20 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-start text-left w-full h-full pt-24 sm:pt-28 md:pt-[12%]">
+        
+        <div className="flex flex-col items-start text-left max-w-lg lg:max-w-xl w-full">
+          
+          <div data-aos="fade-up" data-aos-delay="50" className="mb-2 sm:mb-3 flex items-center gap-2">
+            <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="text-[10px] sm:text-xs md:text-sm font-bold tracking-widest text-emerald-400 uppercase">Available for work</span>
           </div>
 
-          {/* Stats */}
-          <motion.div variants={item} style={{
-            display: 'flex', gap: 0, marginTop: 80,
-            borderTop: '1px solid rgba(255,255,255,0.06)',
-          }}>
-            {stats.map((s, i) => {
-              const Icon = s.icon
-              return (
-                <div key={i} className="hero-stat" style={{
-                  opacity: 0, flex: 1, padding: '28px 0', textAlign: 'center',
-                  borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
-                }}>
-                  <div style={{
-                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                    width: 36, height: 36,
-                    background: 'rgba(3,38,252,0.08)',
-                    borderRadius: 10, marginBottom: 12,
-                  }}>
-                    <Icon size={16} color="#0326fc" />
-                  </div>
-                  <div style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 'clamp(26px, 3vw, 38px)',
-                    fontWeight: 800, color: '#fff',
-                    lineHeight: 1, letterSpacing: '-1px',
-                  }}>{s.value}</div>
-                  <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginTop: 6, fontWeight: 500 }}>{s.label}</p>
-                </div>
-              )
-            })}
-          </motion.div>
-        </motion.div>
+          <h1 
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-5 tracking-tight leading-[1.05]"
+          >
+            Hi, I'm <br /> 
+            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#0326fc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
+              Abdul Hannan
+            </span>
+          </h1>
+
+          <p 
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-4 sm:mb-6 max-w-sm md:max-w-md leading-relaxed drop-shadow-sm"
+          >
+            I build AI-powered SaaS, websites & internal tools for founders and SMBs. 100+ projects shipped, 7+ hackathon wins along the way.
+          </p>
+
+          <div data-aos="fade-up" data-aos-delay="300" className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8 py-2 sm:py-3 border-y border-white/10 w-full max-w-sm sm:max-w-md">
+            <div>
+              <div className="text-xl sm:text-2xl font-black text-white">100+</div>
+              <div className="text-[8px] sm:text-[10px] uppercase font-bold text-white/60 tracking-wider">Projects</div>
+            </div>
+            <div className="w-[1px] h-6 sm:h-8 bg-white/10"></div>
+            <div>
+              <div className="text-xl sm:text-2xl font-black text-white">7+</div>
+              <div className="text-[8px] sm:text-[10px] uppercase font-bold text-white/60 tracking-wider">Hackathon Wins</div>
+            </div>
+            <div className="w-[1px] h-6 sm:h-8 bg-white/10"></div>
+            <div>
+              <div className="text-xl sm:text-2xl font-black text-white">4+</div>
+              <div className="text-[8px] sm:text-[10px] uppercase font-bold text-white/60 tracking-wider">Years Coding</div>
+            </div>
+          </div>
+
+          <div 
+            data-aos="fade-up"
+            data-aos-delay="400"
+            className="flex flex-wrap items-center gap-2 sm:gap-3 w-full"
+          >
+            <a 
+              href="mailto:projects.abdulhannan@gmail.com?subject=Work Inquiry" 
+              className="px-5 sm:px-6 py-2 sm:py-2.5 md:px-7 md:py-3 text-[10px] sm:text-xs md:text-sm rounded-full bg-[#0326fc] text-white font-bold hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg inline-block text-center"
+            >
+              LET'S TALK
+            </a>
+
+            <a 
+              href="#projects" 
+              className="px-5 sm:px-6 py-2 sm:py-2.5 md:px-7 md:py-3 text-[10px] sm:text-xs md:text-sm rounded-full bg-white/10 border border-white/20 text-white font-bold hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-md transform hover:-translate-y-0.5 inline-block text-center"
+            >
+              Projects
+            </a>
+            
+            <a 
+              href="https://www.linkedin.com/in/abdulhannan-projects/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-5 sm:px-6 py-2 sm:py-2.5 md:px-7 md:py-3 text-[10px] sm:text-xs md:text-sm rounded-full bg-black/40 border border-white/20 text-white/80 font-bold hover:bg-white/20 transition-all duration-300 backdrop-blur-md transform hover:-translate-y-0.5 inline-block text-center"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+
+        <div 
+          data-aos="zoom-in"
+          data-aos-delay="600"
+          className="mt-10 sm:mt-12 md:mt-2 flex flex-col items-center justify-center gap-2 cursor-pointer group self-start md:self-auto"
+          onClick={toggleMute}
+        >
+          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-white/20 bg-black/20 backdrop-blur-md flex justify-center items-center group-hover:scale-105 group-hover:bg-white group-hover:border-white transition-all duration-300 shadow-xl">
+            {isMuted ? (
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l-2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6L4.5 9H1.5v6h3l4.5 3.75V5.25z" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28-.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+              </svg>
+            )}
+          </div>
+          <span className="text-white text-[8px] sm:text-[9px] md:text-[11px] font-extrabold tracking-widest uppercase opacity-60 group-hover:opacity-100 transition-opacity mt-1">
+            {isMuted ? "Unmute Reel" : "Mute Sound"}
+          </span>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 4.5, duration: 1 }} style={{
-        position: 'absolute', bottom: 28, left: '50%',
-        transform: 'translateX(-50%)', zIndex: 2,
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
-      }}>
-        <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.25)', letterSpacing: 3, textTransform: 'uppercase', fontWeight: 600 }}>Scroll</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }} style={{
-          width: 18, height: 28,
-          border: '1.5px solid rgba(255,255,255,0.12)',
-          borderRadius: 10, display: 'flex',
-          justifyContent: 'center', paddingTop: 5,
-        }}>
-          <div style={{ width: 2, height: 6, background: '#0326fc', borderRadius: 3 }} />
-        </motion.div>
-      </motion.div>
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; box-shadow: 0 0 8px #0326fc; }
-          50% { opacity: 0.5; box-shadow: 0 0 16px #0326fc; }
-        }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        @media (max-width: 768px) { .hero-photo-wrap { width: 260px !important; height: 300px !important; } }
-      `}</style>
+      <div 
+        data-aos="fade-up"
+        data-aos-delay="800"
+        className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none"
+      >
+        <div className="animate-bounce">
+          <svg 
+            className="w-5 h-5 text-white opacity-70" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2.5" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
     </section>
-  )
-}
+  );
+};
+
+export default Hero;
