@@ -6,7 +6,7 @@ const Footer = () => {
       
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 md:gap-8 w-full font-medium">
         <div className="flex flex-col gap-1">
-          <p className="font-bold text-white uppercase tracking-wider text-[10px] sm:text-xs">AI-integrated Software Engineer</p>
+          <p className="font-bold text-white uppercase tracking-wider text-[10px] sm:text-xs">Software Engineer</p>
           <p className="text-[9px] sm:text-[10px] md:text-xs">Founder @workroomWR</p>
           <p className="text-[9px] sm:text-[10px] md:text-xs">Karachi, Sindh, Pakistan</p>
         </div>

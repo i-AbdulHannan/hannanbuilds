@@ -48,7 +48,7 @@ const About = () => {
           </h2>
 
           <p className="text-[#000] font-black text-base sm:text-xl mb-2 sm:mb-3 uppercase tracking-wide">
-            AI-integrated Software Engineer | Founder @workroomWR
+            Software Engineer | Founder @workroomWR
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
