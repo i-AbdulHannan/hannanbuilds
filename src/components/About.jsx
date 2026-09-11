@@ -48,7 +48,7 @@ const About = () => {
           </h2>
 
           <p className="text-[#000] font-black text-base sm:text-xl mb-2 sm:mb-3 uppercase tracking-wide">
-            Software Engineer | Founder @workroomWR
+            Software Engineer | Founder @ClinicFlowPro & @workroomWR
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
@@ -56,7 +56,7 @@ const About = () => {
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
-            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals, and I'm currently pouring my energy into workroomWR.
+            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals, and I'm currently pouring my energy into <a href="https://workroom-by-hb.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-black font-black underline hover:text-[#0326fc] transition-colors">workroomWR</a>.
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-6 sm:mb-8 leading-relaxed text-blue-100 max-w-3xl">

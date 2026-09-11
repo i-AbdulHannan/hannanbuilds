@@ -8,6 +8,7 @@ const Projects = () => {
     {
       id: 1,
       title: 'ClinicFlow Pro',
+      link: 'https://clinic-flow-landingpage.vercel.app/',
       category: 'ai',
       subtitle: 'AI-Powered Clinic Management',
       description: 'A 42-module clinic management platform with an AI symptom checker and WhatsApp integration. Handles patient records, appointments, billing, and real-time notifications.',
@@ -19,6 +20,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'workroomWR',
+      link: 'https://workroom-by-hb.vercel.app/',
       category: 'saas',
       subtitle: 'Client Transparency Dashboard',
       description: 'A real-time dashboard where agencies and freelancers manage projects, files, payments, and client approvals. No more scattered WhatsApp threads.',
@@ -159,7 +161,11 @@ const Projects = () => {
                 </span>
 
                 <h3 className="text-base sm:text-xl font-black text-white group-hover:text-[#0326fc] transition-colors mb-2 sm:mb-3">
-                  {project.title}
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {project.title} <span className="text-sm">↗</span>
+                    </a>
+                  ) : project.title}
                 </h3>
 
                 <p className="text-[10px] sm:text-xs text-gray-400 leading-relaxed mb-4 sm:mb-6">

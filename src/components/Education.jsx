@@ -7,6 +7,7 @@ const Education = () => {
       id: 'exp-1',
       title: 'Founder & Product Engineer',
       company: 'workroomWR',
+      companyLink: 'https://workroom-by-hb.vercel.app/',
       date: 'May 2026 - Present',
       duration: '5 months',
       type: 'Current',
@@ -109,7 +110,13 @@ const Education = () => {
                   </div>
 
                   <h4 className="text-base sm:text-lg font-black text-white mt-1">{exp.title}</h4>
-                  <p className="text-[10px] sm:text-xs font-semibold text-gray-300 mt-1">{exp.company}</p>
+                  <p className="text-[10px] sm:text-xs font-semibold text-gray-300 mt-1">
+                    {exp.companyLink ? (
+                      <a href={exp.companyLink} target="_blank" rel="noopener noreferrer" className="hover:text-[#0326fc] hover:underline transition-colors">
+                        {exp.company} ↗
+                      </a>
+                    ) : exp.company}
+                  </p>
                   <p className="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3 leading-relaxed">{exp.desc}</p>
 
                   <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4">
