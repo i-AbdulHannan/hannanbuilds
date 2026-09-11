@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isOpen 
-          ? 'bg-[#0326fc] py-3 sm:py-4'
+          ? 'bg-[#0245ec] py-3 sm:py-4'
           : isScrolled 
             ? 'bg-white/70 backdrop-blur-xl py-2.5 sm:py-3 border-b border-gray-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]' 
             : 'bg-transparent py-3.5 sm:py-5'
@@ -37,7 +37,7 @@ const Navbar = () => {
               isOpen || !isScrolled ? 'text-white' : 'text-gray-900'
             }`}
           >
-            Abdul Hannan <span className="text-[#0326fc]">.</span>
+            Abdul Hannan <span className="text-[#d9ff3a]">.</span>
           </a>
         </div>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
               }`}
             >
               {link}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#0326fc] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#0245ec] transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
             href="#contact" 
             className={`px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-black transition-all duration-500 ${
               isScrolled
-                ? 'bg-gray-900 text-white hover:bg-[#0326fc] hover:shadow-[0_10px_25px_rgba(3,38,252,0.25)]'
+                ? 'bg-gray-900 text-white hover:bg-[#d9ff3a] hover:text-black hover:shadow-[0_10px_25px_rgba(217,255,58,0.25)]'
                 : 'bg-white/10 border border-white/20 text-white hover:bg-white hover:text-black backdrop-blur-md'
             }`}
           >
@@ -90,7 +90,7 @@ const Navbar = () => {
 
       <div 
         className={`md:hidden absolute top-full left-0 w-full transition-all duration-500 ease-in-out ${
-          isOpen ? 'max-h-[460px] py-5 sm:py-6 opacity-100 bg-[#0326fc] shadow-2xl' : 'max-h-0 opacity-0 pointer-events-none'
+          isOpen ? 'max-h-[460px] py-5 sm:py-6 opacity-100 bg-[#0245ec] shadow-2xl' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
         <div className="flex flex-col px-4 sm:px-6 space-y-3 sm:space-y-4">
@@ -108,7 +108,7 @@ const Navbar = () => {
              <a 
                href="#contact" 
                onClick={() => setIsOpen(false)} 
-               className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0326fc] font-black hover:bg-gray-950 hover:text-white transition-all duration-300 w-full text-center shadow-xl text-sm sm:text-base"
+               className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white text-[#0245ec] font-black hover:bg-gray-950 hover:text-white transition-all duration-300 w-full text-center shadow-xl text-sm sm:text-base"
              >
                Let's Talk
              </a>

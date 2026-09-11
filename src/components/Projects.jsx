@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import LiveActivityBadge from './LiveActivityBadge';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -9,6 +10,7 @@ const Projects = () => {
       id: 1,
       title: 'ClinicFlow Pro',
       link: 'https://clinic-flow-landingpage.vercel.app/',
+      liveActivityType: 'clinicflow',
       category: 'ai',
       subtitle: 'AI-Powered Clinic Management',
       description: 'A 42-module clinic management platform with an AI symptom checker and WhatsApp integration. Handles patient records, appointments, billing, and real-time notifications.',
@@ -21,6 +23,7 @@ const Projects = () => {
       id: 2,
       title: 'workroomWR',
       link: 'https://workroom-by-hb.vercel.app/',
+      liveActivityType: 'workroom',
       category: 'saas',
       subtitle: 'Client Transparency Dashboard',
       description: 'A real-time dashboard where agencies and freelancers manage projects, files, payments, and client approvals. No more scattered WhatsApp threads.',
@@ -88,7 +91,7 @@ const Projects = () => {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
           <div>
-            <div className="inline-block px-3 sm:px-4 py-1 rounded-full bg-[#0326fc]/10 border border-[#0326fc]/30 text-[#0326fc] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+            <div className="inline-block px-3 sm:px-4 py-1 rounded-full bg-[#d9ff3a]/10 border border-[#d9ff3a]/30 text-[#d9ff3a] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
               Featured Work
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
@@ -103,7 +106,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('all')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'all' ? 'bg-[#0326fc] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'all' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               All (6)
@@ -111,7 +114,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('saas')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'saas' ? 'bg-[#0326fc] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'saas' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               SaaS
@@ -119,7 +122,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('web')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'web' ? 'bg-[#0326fc] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'web' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               Web
@@ -127,7 +130,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('ai')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'ai' ? 'bg-[#0326fc] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'ai' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               AI
@@ -144,7 +147,7 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="bg-gray-900/50 border border-gray-800/80 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between hover:border-[#0326fc]/50 hover:shadow-[0_10px_30px_rgba(3,38,252,0.1)] transition-all duration-500 group"
+              className="bg-gray-900/50 border border-gray-800/80 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between hover:border-[#d9ff3a]/50 hover:shadow-[0_10px_30px_rgba(217,255,58,0.08)] transition-all duration-500 group"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -156,11 +159,13 @@ const Projects = () => {
                   </span>
                 </div>
 
-                <span className="text-[9px] sm:text-[11px] font-bold text-[#0326fc] uppercase tracking-wider block mb-0.5 sm:mb-1">
+                {project.liveActivityType && <LiveActivityBadge type={project.liveActivityType} />}
+
+                <span className="text-[9px] sm:text-[11px] font-bold text-[#d9ff3a] uppercase tracking-wider block mb-0.5 sm:mb-1">
                   {project.subtitle}
                 </span>
 
-                <h3 className="text-base sm:text-xl font-black text-white group-hover:text-[#0326fc] transition-colors mb-2 sm:mb-3">
+                <h3 className="text-base sm:text-xl font-black text-white group-hover:text-[#d9ff3a] transition-colors mb-2 sm:mb-3">
                   {project.link ? (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
                       {project.title} <span className="text-sm">↗</span>
@@ -194,7 +199,7 @@ const Projects = () => {
             href="https://www.linkedin.com/in/abdulhannan-projects/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 text-white font-bold text-xs sm:text-sm hover:border-[#0326fc] transition-all duration-300 shadow-xl group"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 text-white font-bold text-xs sm:text-sm hover:border-[#0245ec] transition-all duration-300 shadow-xl group"
           >
             <span>View All Projects on LinkedIn</span>
             <span className="text-base sm:text-lg group-hover:translate-x-1 transition-transform">↗</span>

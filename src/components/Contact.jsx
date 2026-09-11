@@ -66,7 +66,7 @@ const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-[#0326fc] w-full max-w-5xl p-6 sm:p-8 md:p-12 lg:p-16 text-white flex flex-col justify-between rounded-2xl sm:rounded-3xl shadow-2xl relative z-10"
+        className="bg-[#0245ec] w-full max-w-5xl p-6 sm:p-8 md:p-12 lg:p-16 text-white flex flex-col justify-between rounded-2xl sm:rounded-3xl shadow-2xl relative z-10"
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 border-b border-white/20 pb-5 sm:pb-6">
           <div>

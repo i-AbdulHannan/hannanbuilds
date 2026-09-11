@@ -57,7 +57,7 @@ const Skills = () => {
               <div key={idx} className="flex flex-col gap-1.5 sm:gap-2">
                 <div className="flex justify-between items-center text-[10px] sm:text-xs font-bold text-gray-800">
                   <span>{item.name}</span>
-                  <span className="text-[#0326fc]">{item.percent}%</span>
+                  <span className="text-[#d9ff3a]">{item.percent}%</span>
                 </div>
                 <div className="w-full h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div 
@@ -65,7 +65,7 @@ const Skills = () => {
                     whileInView={{ width: `${item.percent}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-gray-900 to-[#0326fc] rounded-full"
+                    className="h-full bg-gradient-to-r from-gray-900 to-[#d9ff3a] rounded-full"
                   />
                 </div>
               </div>
@@ -82,7 +82,7 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: idx * 0.03 }}
               whileHover={{ y: -5 }}
-              className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md hover:border-[#0326fc]/40 transition-all duration-300 group cursor-default"
+              className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md hover:border-[#0245ec]/40 transition-all duration-300 group cursor-default"
             >
               <span className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform">{skill.icon}</span>
               <h4 className="text-[10px] sm:text-xs font-bold text-gray-900 mb-0.5">{skill.name}</h4>

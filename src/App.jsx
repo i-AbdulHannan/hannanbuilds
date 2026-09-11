@@ -9,6 +9,8 @@ import Education from './components/Education'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import VisitorCounter from './components/VisitorCounter'
+import ActivityToast from './components/ActivityToast'
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      <VisitorCounter />
+      <ActivityToast />
     </>
   )
 }

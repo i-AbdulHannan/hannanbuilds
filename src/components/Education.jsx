@@ -112,7 +112,7 @@ const Education = () => {
                   <h4 className="text-base sm:text-lg font-black text-white mt-1">{exp.title}</h4>
                   <p className="text-[10px] sm:text-xs font-semibold text-gray-300 mt-1">
                     {exp.companyLink ? (
-                      <a href={exp.companyLink} target="_blank" rel="noopener noreferrer" className="hover:text-[#0326fc] hover:underline transition-colors">
+                      <a href={exp.companyLink} target="_blank" rel="noopener noreferrer" className="hover:text-[#0245ec] hover:underline transition-colors">
                         {exp.company} ↗
                       </a>
                     ) : exp.company}

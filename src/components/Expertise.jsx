@@ -29,7 +29,7 @@ const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength
       ref={ref}
       data-aos={aosType || "fade-up"}
       data-aos-delay={aosDelay}
-      className={`w-full sm:w-72 md:w-80 rounded-[1.5rem] sm:rounded-[2rem] p-1.5 sm:p-2 relative flex flex-col items-center hover:scale-[1.02] transition-all duration-700 z-10 ${className} ${isActive ? 'bg-[#0326fc] border-blue-400 shadow-[0_20px_50px_rgba(3,38,252,0.4)]' : 'bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]'
+      className={`w-full sm:w-72 md:w-80 rounded-[1.5rem] sm:rounded-[2rem] p-1.5 sm:p-2 relative flex flex-col items-center hover:scale-[1.02] transition-all duration-700 z-10 ${className} ${isActive ? 'bg-[#d9ff3a] border-[#c4e633] shadow-[0_20px_50px_rgba(217,255,58,0.3)]' : 'bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]'
         }`}
     >
       <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-gray-300 to-gray-100 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] absolute top-3 sm:top-4 border border-gray-300 z-10 flex items-center justify-center">
@@ -110,7 +110,7 @@ const Expertise = () => {
           <path
             d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200"
             fill="none"
-            stroke="#0326fc"
+            stroke="#0245ec"
             strokeWidth="2"
             strokeDasharray="8 10"
             mask="url(#path-mask)"
@@ -144,7 +144,7 @@ const Expertise = () => {
           <path
             d="M 2,0 L 2,100"
             fill="none"
-            stroke="#0326fc"
+            stroke="#0245ec"
             strokeWidth="4"
             strokeDasharray="4 6"
             mask="url(#path-mask-mobile)"

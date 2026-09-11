@@ -61,7 +61,7 @@ const Hero = () => {
             className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-5 tracking-tight leading-[1.05]"
           >
             Hi, I'm <br /> 
-            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#0326fc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
+            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#0245ec] drop-shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
               Abdul Hannan
             </span>
           </h1>
@@ -98,7 +98,7 @@ const Hero = () => {
           >
             <a 
               href="mailto:projects.abdulhannan@gmail.com?subject=Work Inquiry" 
-              className="px-5 sm:px-6 py-2 sm:py-2.5 md:px-7 md:py-3 text-[10px] sm:text-xs md:text-sm rounded-full bg-[#0326fc] text-white font-bold hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg inline-block text-center"
+              className="px-5 sm:px-6 py-2 sm:py-2.5 md:px-7 md:py-3 text-[10px] sm:text-xs md:text-sm rounded-full bg-[#d9ff3a] text-black font-bold hover:bg-[#c4e633] transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg inline-block text-center"
             >
               LET'S TALK
             </a>

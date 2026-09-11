@@ -3,7 +3,7 @@ import stackImage from '../assets/about/image.jpg';
 
 const About = () => {
   return (
-    <section id="about" className="bg-[#0326fc] pt-16 sm:pt-20 pb-24 sm:pb-40 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans">
+    <section id="about" className="bg-[#0245ec] pt-16 sm:pt-20 pb-24 sm:pb-40 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 sm:gap-12 lg:gap-16 items-start">
         
         {/* Left Side: ID Badge */}
@@ -27,7 +27,7 @@ const About = () => {
 
               <div className="text-center">
                 <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-wider">Abdul Hannan</h4>
-                <p className="text-[10px] sm:text-xs font-bold text-[#0326fc] uppercase tracking-widest mt-0.5">AI Product Engineer</p>
+                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">AI Product Engineer</p>
                 <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/10 flex justify-between text-[10px] sm:text-[11px] text-gray-400 font-mono">
                   <span>ID: AH-2026X</span>
                   <span className="text-emerald-400 font-bold">● ACTIVE</span>
@@ -56,7 +56,7 @@ const About = () => {
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
-            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals, and I'm currently pouring my energy into <a href="https://workroom-by-hb.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-black font-black underline hover:text-[#0326fc] transition-colors">workroomWR</a>.
+            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals, and I'm currently pouring my energy into <a href="https://workroom-by-hb.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-black font-black underline hover:text-[#0245ec] transition-colors">workroomWR</a>.
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-6 sm:mb-8 leading-relaxed text-blue-100 max-w-3xl">
@@ -96,10 +96,10 @@ const About = () => {
               </div>
               <div className="min-w-0">
                 <div className="text-[10px] sm:text-xs text-gray-400 font-medium">Follow on Instagram</div>
-                <div className="text-sm sm:text-base font-black text-white group-hover:text-[#0326fc] transition-colors truncate">@hannanbuilds ↗</div>
+                <div className="text-sm sm:text-base font-black text-white group-hover:text-[#0245ec] transition-colors truncate">@hannanbuilds ↗</div>
               </div>
             </div>
-            <div className="hidden sm:flex px-4 py-2 rounded-full bg-white/10 text-xs font-bold text-white group-hover:bg-[#0326fc] shrink-0">
+            <div className="hidden sm:flex px-4 py-2 rounded-full bg-white/10 text-xs font-bold text-white group-hover:bg-[#0245ec] shrink-0">
               Follow
             </div>
           </a>
