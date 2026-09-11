@@ -79,7 +79,7 @@ const About = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-[10px] sm:text-xs text-white/60 font-bold uppercase tracking-wider">Top Skills</span>
-              <span className="text-xs sm:text-sm font-bold text-white">PAAS, Website Building, AI Products</span>
+              <span className="text-xs sm:text-sm font-bold text-white">SAAS, PAAS, AI Products, Web Applications & Websites</span>
             </div>
           </div>
 
