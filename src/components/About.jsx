@@ -27,7 +27,7 @@ const About = () => {
 
               <div className="text-center">
                 <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-wider">Abdul Hannan</h4>
-                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">AI Product Engineer</p>
+                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">Software Engineer</p>
                 <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/10 flex justify-between text-[10px] sm:text-[11px] text-gray-400 font-mono">
                   <span>ID: AH-2026X</span>
                   <span className="text-emerald-400 font-bold">● ACTIVE</span>
