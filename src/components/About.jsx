@@ -27,7 +27,7 @@ const About = () => {
 
               <div className="text-center">
                 <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-wider">Abdul Hannan</h4>
-                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">Software Engineer</p>
+                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">AI Product Engineer</p>
                 <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/10 flex justify-between text-[10px] sm:text-[11px] text-gray-400 font-mono">
                   <span>ID: AH-2026X</span>
                   <span className="text-emerald-400 font-bold">● ACTIVE</span>
@@ -48,7 +48,7 @@ const About = () => {
           </h2>
 
           <p className="text-[#000] font-black text-base sm:text-xl mb-2 sm:mb-3 uppercase tracking-wide">
-            Software Engineer | Founder @ClinicFlowPro & @workroomWR
+            Software Engineer | Founder @hannanlabs
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
@@ -79,7 +79,7 @@ const About = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-[10px] sm:text-xs text-white/60 font-bold uppercase tracking-wider">Top Skills</span>
-              <span className="text-xs sm:text-sm font-bold text-white">SAAS, PAAS, AI Products, Web Applications & Websites</span>
+              <span className="text-xs sm:text-sm font-bold text-white">PAAS, Website Building, AI Products</span>
             </div>
           </div>
 
@@ -103,6 +103,35 @@ const About = () => {
               Follow
             </div>
           </a>
+
+          {/* Hannanlabs Section */}
+          <div className="bg-black/40 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-[#d9ff3a]/20 mt-2">
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="text-xl">🧪</span>
+              <h3 className="text-base sm:text-lg font-black text-[#d9ff3a] tracking-tight">hannanlabs</h3>
+            </div>
+            <p className="text-[11px] sm:text-xs text-blue-100 leading-relaxed mb-4">
+              I started hannanlabs because I was tired of seeing AI tools that were either too expensive or too complicated for everyday use. The goal is simple: ship AI products that actually solve problems for real businesses — clinics, agencies, freelancers — not just demos that look good on Twitter.
+            </p>
+            <div className="flex flex-wrap gap-2.5">
+              <a 
+                href="https://hannanlabs.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a] text-black text-[10px] sm:text-xs font-black hover:bg-[#c4e633] transition-all duration-300 shadow-lg hover:shadow-[0_8px_25px_rgba(217,255,58,0.3)]"
+              >
+                🌐 Website ↗
+              </a>
+              <a 
+                href="https://www.instagram.com/hannanlabs_" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a]/10 border border-[#d9ff3a]/30 text-[#d9ff3a] text-[10px] sm:text-xs font-black hover:bg-[#d9ff3a]/20 transition-all duration-300"
+              >
+                📸 Instagram ↗
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>
