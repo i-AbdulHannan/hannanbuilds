@@ -5,15 +5,15 @@ const Education = () => {
   const experience = [
     {
       id: 'exp-1',
-      title: 'Founder & Product Engineer',
-      company: 'workroomWR',
-      companyLink: 'https://workroom-by-hb.vercel.app/',
-      date: 'May 2026 - Present',
-      duration: '5 months',
+      title: 'Founder & Software Engineer',
+      company: 'hannanlabs',
+      companyLink: 'https://hannanlabs.vercel.app/',
+      date: 'Mar 2025 - Present',
+      duration: '1 year 7 months',
       type: 'Current',
       tagColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
       icon: '🚀',
-      desc: 'Built workroomWR because I was tired of chasing clients over WhatsApp. It\'s a real-time dashboard where agencies and freelancers manage projects, files, payments, and approvals, all in one place.'
+      desc: 'An independent product studio focused on turning real problems into software people actually want to use. Shipping products like workroomWR and ClinicFlow Pro under one roof — fewer things, built well.'
     },
     {
       id: 'exp-2',
