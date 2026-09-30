@@ -1,11 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const Education = () => {
   const experience = [
     {
       id: 'exp-1',
-      title: 'Founder & Software Engineer',
+      title: 'Founder & Product Engineer',
       company: 'hannanlabs',
       companyLink: 'https://hannanlabs.vercel.app/',
       date: 'Mar 2025 - Present',

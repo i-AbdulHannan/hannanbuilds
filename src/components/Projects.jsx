@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import LiveActivityBadge from './LiveActivityBadge';
 
@@ -8,6 +8,18 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      title: 'worthhype',
+      link: 'https://worthhype.vercel.app/',
+      category: 'saas',
+      subtitle: 'Verified Review Platform',
+      description: 'An automated review platform that helps local businesses collect verified customer reviews through WhatsApp, email, and multiple channels. Started just 4 days ago, with verified review badges, private feedback, and embeddable review widgets already taking shape.',
+      technologies: ['PHP', 'WhatsApp Integration', 'Email Automation', 'JavaScript'],
+      badge: 'In Development',
+      badgeColor: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
+      icon: '⭐'
+    },
+    {
+      id: 2,
       title: 'ClinicFlow Pro',
       link: 'https://clinic-flow-landingpage.vercel.app/',
       liveActivityType: 'clinicflow',
@@ -20,7 +32,7 @@ const Projects = () => {
       icon: '🏥'
     },
     {
-      id: 2,
+      id: 3,
       title: 'workroomWR',
       link: 'https://workroom-by-hb.vercel.app/',
       liveActivityType: 'workroom',
@@ -33,7 +45,7 @@ const Projects = () => {
       icon: '📋'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Talent Tree',
       category: 'web',
       subtitle: 'Student Job Platform',
@@ -44,7 +56,7 @@ const Projects = () => {
       icon: '🌳'
     },
     {
-      id: 4,
+      id: 5,
       title: 'AI Symptom Checker',
       category: 'ai',
       subtitle: 'Healthcare AI Tool',
@@ -55,7 +67,7 @@ const Projects = () => {
       icon: '🤖'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Client Portals',
       category: 'saas',
       subtitle: 'Project Management Tools',
@@ -66,7 +78,7 @@ const Projects = () => {
       icon: '📊'
     },
     {
-      id: 6,
+      id: 7,
       title: 'SMB Web Solutions',
       category: 'web',
       subtitle: 'Business Websites & Tools',
@@ -109,7 +121,7 @@ const Projects = () => {
                 filter === 'all' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
-              All (6)
+              All (7)
             </button>
             <button
               onClick={() => setFilter('saas')}

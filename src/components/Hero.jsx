@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import heroVideo from '../assets/hero-video/herovideo.mp4';
 
 const Hero = () => {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
