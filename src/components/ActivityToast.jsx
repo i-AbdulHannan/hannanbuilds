@@ -4,9 +4,6 @@ const notifications = [
   { product: 'ClinicFlow Pro', action: 'purchased', icon: '🏥' },
   { product: 'ClinicFlow Pro', action: 'requested demo for', icon: '🏥' },
   { product: 'ClinicFlow Pro', action: 'is reviewing', icon: '🏥' },
-  { product: 'workroomWR', action: 'visited landing page of', icon: '📋' },
-  { product: 'workroomWR', action: 'signed up for beta of', icon: '📋' },
-  { product: 'workroomWR', action: 'is exploring', icon: '📋' },
 ];
 
 const times = ['just now', '1m ago', '2m ago', '3m ago', '5m ago'];

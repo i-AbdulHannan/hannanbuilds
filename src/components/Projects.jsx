@@ -31,21 +31,9 @@ const Projects = () => {
       badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
       icon: '🏥'
     },
+
     {
       id: 3,
-      title: 'workroomWR',
-      link: 'https://workroom-by-hb.vercel.app/',
-      liveActivityType: 'workroom',
-      category: 'saas',
-      subtitle: 'Client Transparency Dashboard',
-      description: 'A real-time dashboard where agencies and freelancers manage projects, files, payments, and client approvals. No more scattered WhatsApp threads.',
-      technologies: ['PHP', 'MySQL', 'Tailwind', 'JavaScript'],
-      badge: 'In Development',
-      badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
-      icon: '📋'
-    },
-    {
-      id: 4,
       title: 'Talent Tree',
       category: 'web',
       subtitle: 'Student Job Platform',
@@ -56,7 +44,7 @@ const Projects = () => {
       icon: '🌳'
     },
     {
-      id: 5,
+      id: 4,
       title: 'AI Symptom Checker',
       category: 'ai',
       subtitle: 'Healthcare AI Tool',
@@ -67,7 +55,7 @@ const Projects = () => {
       icon: '🤖'
     },
     {
-      id: 6,
+      id: 5,
       title: 'Client Portals',
       category: 'saas',
       subtitle: 'Project Management Tools',
@@ -78,7 +66,7 @@ const Projects = () => {
       icon: '📊'
     },
     {
-      id: 7,
+      id: 6,
       title: 'SMB Web Solutions',
       category: 'web',
       subtitle: 'Business Websites & Tools',
@@ -121,7 +109,7 @@ const Projects = () => {
                 filter === 'all' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
-              All (7)
+              All (6)
             </button>
             <button
               onClick={() => setFilter('saas')}

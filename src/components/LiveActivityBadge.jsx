@@ -6,11 +6,6 @@ const messages = {
     { text: 'viewing ClinicFlow Pro', max: 12 },
     { text: 'requested demo', max: 3 },
   ],
-  workroom: [
-    { text: 'visited workroomWR', max: 8 },
-    { text: 'viewing landing page', max: 6 },
-    { text: 'signed up for beta', max: 4 },
-  ],
 };
 
 const LiveActivityBadge = ({ type }) => {

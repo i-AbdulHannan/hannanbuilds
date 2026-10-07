@@ -26,7 +26,7 @@ const About = () => {
 
               <div className="text-center">
                 <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-wider">Abdul Hannan</h4>
-                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">Product Engineer</p>
+                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">Software Engineer</p>
                 <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/10 flex justify-between text-[10px] sm:text-[11px] text-gray-400 font-mono">
                   <span>ID: AH-2026X</span>
                   <span className="text-emerald-400 font-bold">● ACTIVE</span>
@@ -47,7 +47,7 @@ const About = () => {
           </h2>
 
           <p className="text-[#000] font-black text-base sm:text-xl mb-2 sm:mb-3 uppercase tracking-wide">
-            Product Engineer | Founder @hannanlabs
+            Software Engineer | Founder @hannanlabs
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
@@ -55,7 +55,7 @@ const About = () => {
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
-            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals, and I'm currently pouring my energy into <a href="https://workroom-by-hb.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-black font-black underline hover:text-[#0245ec] transition-colors">workroomWR</a>.
+            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals.
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-6 sm:mb-8 leading-relaxed text-blue-100 max-w-3xl">

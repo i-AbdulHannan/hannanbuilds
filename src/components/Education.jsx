@@ -4,7 +4,7 @@ const Education = () => {
   const experience = [
     {
       id: 'exp-1',
-      title: 'Founder & Product Engineer',
+      title: 'Founder & Software Engineer',
       company: 'hannanlabs',
       companyLink: 'https://hannanlabs.vercel.app/',
       date: 'Mar 2025 - Present',
@@ -12,7 +12,7 @@ const Education = () => {
       type: 'Current',
       tagColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
       icon: '🚀',
-      desc: 'An independent product studio focused on turning real problems into software people actually want to use. Shipping products like workroomWR and ClinicFlow Pro under one roof — fewer things, built well.'
+      desc: 'An independent product studio focused on turning real problems into software people actually want to use. Shipping products like ClinicFlow Pro under one roof — fewer things, built well.'
     },
     {
       id: 'exp-2',
