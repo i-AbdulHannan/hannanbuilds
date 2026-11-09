@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 const messages = {
   clinicflow: [
-    { text: 'bought ClinicFlow Pro', max: 5 },
-    { text: 'viewing ClinicFlow Pro', max: 12 },
+    { text: 'bought cl1nical', max: 5 },
+    { text: 'viewing cl1nical', max: 12 },
     { text: 'requested demo', max: 3 },
   ],
 };

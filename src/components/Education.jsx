@@ -4,18 +4,30 @@ const Education = () => {
   const experience = [
     {
       id: 'exp-1',
-      title: 'Founder & Software Engineer',
-      company: 'hannanlabs',
-      companyLink: 'https://hannanlabs.vercel.app/',
-      date: 'Mar 2025 - Present',
-      duration: '1 year 7 months',
+      title: 'Co-founder & Software Engineer',
+      company: 'think2ship',
+      companyLink: 'https://think2ship.vercel.app/',
+      date: 'Feb 2024 - Present',
+      duration: '2 years 9 months',
       type: 'Current',
       tagColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-      icon: '🚀',
-      desc: 'An independent product studio focused on turning real problems into software people actually want to use. Shipping products like ClinicFlow Pro under one roof — fewer things, built well.'
+      icon: '🛠️',
+      desc: 'A product studio I co-founded with Saad Kamal. We do not start with code — we start with the problem, then build and ship AI products, SaaS platforms, and web applications for founders.'
     },
     {
       id: 'exp-2',
+      title: 'Founder & Software Engineer',
+      company: 'hannanlabs',
+      companyLink: 'https://hannanlabs.vercel.app/',
+      date: 'Mar 2025 - Oct 2026',
+      duration: '1 year 8 months',
+      type: 'Past',
+      tagColor: 'bg-gray-500/20 text-gray-300 border-gray-500/30',
+      icon: '🚀',
+      desc: 'An independent product studio focused on turning real problems into software people actually want to use. Shipped products like cl1nical under one roof — fewer things, built well.'
+    },
+    {
+      id: 'exp-3',
       title: 'Modern Web Application Developer',
       company: 'S.M.I.T (Saylani Mass I.T Training)',
       date: 'Feb 2025 - Jul 2025',
@@ -26,7 +38,7 @@ const Education = () => {
       desc: 'Dove deep into modern web frameworks and full-stack practices. This is where I sharpened my skills beyond just PHP and started thinking about product-level engineering.'
     },
     {
-      id: 'exp-3',
+      id: 'exp-4',
       title: 'WordPress Developer',
       company: 'BrightCraft Digital LTD',
       date: 'Sep 2024 - Apr 2025',
@@ -37,7 +49,7 @@ const Education = () => {
       desc: 'Built and customized WordPress sites for clients: themes, plugins, responsive design. Learned how to translate what clients actually want into working products.'
     },
     {
-      id: 'exp-4',
+      id: 'exp-5',
       title: 'Full Stack Engineer',
       company: 'Debugging Bugz',
       date: 'Oct 2022 - Jun 2024',
@@ -48,7 +60,7 @@ const Education = () => {
       desc: 'Where it all started. Spent nearly two years building web apps end-to-end, frontend, backend, databases, the whole stack. This is where I went from "learning to code" to actually shipping.'
     },
     {
-      id: 'exp-5',
+      id: 'exp-6',
       title: 'PHP Web Application Developer',
       company: 'Debugging Bugz',
       date: 'Feb 2022 - Aug 2022',

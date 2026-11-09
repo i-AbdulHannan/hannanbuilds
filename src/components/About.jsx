@@ -47,7 +47,7 @@ const About = () => {
           </h2>
 
           <p className="text-[#000] font-black text-base sm:text-xl mb-2 sm:mb-3 uppercase tracking-wide">
-            Software Engineer | Founder @hannanlabs
+            Software Engineer | Co-founder @think2ship
           </p>
 
           <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
@@ -103,18 +103,21 @@ const About = () => {
             </div>
           </a>
 
-          {/* Hannanlabs Section */}
+          {/* think2ship Section */}
           <div className="bg-black/40 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-[#d9ff3a]/20 mt-2">
             <div className="flex items-center gap-2.5 mb-3">
-              <span className="text-xl">🧪</span>
-              <h3 className="text-base sm:text-lg font-black text-[#d9ff3a] tracking-tight">hannanlabs</h3>
+              <span className="text-xl">🚀</span>
+              <h3 className="text-base sm:text-lg font-black text-[#d9ff3a] tracking-tight">think2ship</h3>
             </div>
+            <p className="text-[11px] sm:text-xs text-blue-100 leading-relaxed mb-2">
+              think2ship is a product studio I started with Saad Kamal. Most founders do not need more advice — they need the product to exist. We do not start with code. We start with your problem. We listen, ask questions, and only then do we build the product that solves it.
+            </p>
             <p className="text-[11px] sm:text-xs text-blue-100 leading-relaxed mb-4">
-              I started hannanlabs because I was tired of seeing AI tools that were either too expensive or too complicated for everyday use. The goal is simple: ship AI products that actually solve problems for real businesses — clinics, agencies, freelancers — not just demos that look good on Twitter.
+              We build AI products, SaaS platforms, and web applications for founders who want a team that moves fast and builds it properly. Founded in 2024.
             </p>
             <div className="flex flex-wrap gap-2.5">
               <a 
-                href="https://hannanlabs.vercel.app/" 
+                href="https://think2ship.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a] text-black text-[10px] sm:text-xs font-black hover:bg-[#c4e633] transition-all duration-300 shadow-lg hover:shadow-[0_8px_25px_rgba(217,255,58,0.3)]"
@@ -122,7 +125,7 @@ const About = () => {
                 🌐 Website ↗
               </a>
               <a 
-                href="https://www.instagram.com/hannanlabs_" 
+                href="https://www.instagram.com/think2ship/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a]/10 border border-[#d9ff3a]/30 text-[#d9ff3a] text-[10px] sm:text-xs font-black hover:bg-[#d9ff3a]/20 transition-all duration-300"

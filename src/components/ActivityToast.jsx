@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const notifications = [
-  { product: 'ClinicFlow Pro', action: 'purchased', icon: '🏥' },
-  { product: 'ClinicFlow Pro', action: 'requested demo for', icon: '🏥' },
-  { product: 'ClinicFlow Pro', action: 'is reviewing', icon: '🏥' },
+  { product: 'cl1nical', action: 'purchased', icon: '🏥' },
+  { product: 'cl1nical', action: 'requested demo for', icon: '🏥' },
+  { product: 'cl1nical', action: 'is reviewing', icon: '🏥' },
 ];
 
 const times = ['just now', '1m ago', '2m ago', '3m ago', '5m ago'];
