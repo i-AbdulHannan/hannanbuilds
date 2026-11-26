@@ -36,15 +36,15 @@ const TagCard = ({ number, title, text, className, aosDelay, aosType, pathLength
         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-800 rounded-full opacity-20"></div>
       </div>
 
-      <div className={`w-full h-full rounded-[1.2rem] sm:rounded-[1.5rem] mt-6 sm:mt-8 p-5 sm:p-6 md:p-8 flex flex-col min-h-[180px] sm:min-h-[220px] transition-colors duration-700 ${isActive ? 'bg-blue-700/50' : 'bg-[#f4f4f4]'
+      <div className={`w-full h-full rounded-[1.2rem] sm:rounded-[1.5rem] mt-6 sm:mt-8 p-5 sm:p-6 md:p-8 flex flex-col min-h-[180px] sm:min-h-[220px] transition-colors duration-700 ${isActive ? 'bg-black' : 'bg-[#f4f4f4]'
         }`}>
-        <span className={`text-lg sm:text-xl font-bold mb-1.5 sm:mb-2 font-serif italic transition-colors duration-700 ${isActive ? 'text-blue-200' : 'text-gray-400'
+        <span className={`text-lg sm:text-xl font-bold mb-1.5 sm:mb-2 font-serif italic transition-colors duration-700 ${isActive ? 'text-[#d9ff3a]' : 'text-gray-400'
           }`}>{number}</span>
 
         <h3 className={`text-xl sm:text-2xl font-black mb-2 sm:mb-3 tracking-tight transition-colors duration-700 ${isActive ? 'text-white' : 'text-gray-900'
           }`}>{title}</h3>
 
-        <p className={`text-xs sm:text-sm leading-relaxed font-medium transition-colors duration-700 ${isActive ? 'text-blue-100' : 'text-gray-500'
+        <p className={`text-xs sm:text-sm leading-relaxed font-medium transition-colors duration-700 ${isActive ? 'text-white/70' : 'text-gray-500'
           }`}>
           {text}
         </p>
@@ -110,7 +110,7 @@ const Expertise = () => {
           <path
             d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200"
             fill="none"
-            stroke="#0245ec"
+            stroke="#d9ff3a"
             strokeWidth="2"
             strokeDasharray="8 10"
             mask="url(#path-mask)"
@@ -144,7 +144,7 @@ const Expertise = () => {
           <path
             d="M 2,0 L 2,100"
             fill="none"
-            stroke="#0245ec"
+            stroke="#d9ff3a"
             strokeWidth="4"
             strokeDasharray="4 6"
             mask="url(#path-mask-mobile)"

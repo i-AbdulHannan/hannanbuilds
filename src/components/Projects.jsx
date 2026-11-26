@@ -15,7 +15,7 @@ const Projects = () => {
       description: 'An automated review platform that helps local businesses collect verified customer reviews through WhatsApp, email, and multiple channels. Started just 4 days ago, with verified review badges, private feedback, and embeddable review widgets already taking shape.',
       technologies: ['PHP', 'WhatsApp Integration', 'Email Automation', 'JavaScript'],
       badge: 'In Development',
-      badgeColor: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
+      badgeColor: 'bg-white/10 text-white border-white/20',
       icon: '⭐'
     },
     {
@@ -25,10 +25,10 @@ const Projects = () => {
       liveActivityType: 'clinicflow',
       category: 'ai',
       subtitle: 'AI-Powered Clinic Management',
-      description: 'A 42-module clinic management platform with an AI symptom checker and WhatsApp integration. Handles patient records, appointments, billing, and real-time notifications. Currently used by 3 clinics across Pakistan.',
+      description: 'Founded in Jan 2026 under hannanlabs, cl1nical is a 42-module clinic management platform with an AI symptom checker and WhatsApp integration. Handles patient records, appointments, billing, and real-time notifications. Currently used by 3 clinics across Pakistan.',
       technologies: ['PHP', 'MySQL', 'AI Integration', 'WhatsApp API'],
-      badge: 'Flagship Product',
-      badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+      badge: 'hannanlabs Product',
+      badgeColor: 'bg-[#d9ff3a]/15 text-[#d9ff3a] border-[#d9ff3a]/30',
       icon: '🏥'
     },
 
@@ -40,7 +40,7 @@ const Projects = () => {
       description: 'A student job platform that organically pulled in 12,000+ users in its first year. Connecting students with real opportunities across Pakistan.',
       technologies: ['PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
       badge: '12K+ Users',
-      badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+      badgeColor: 'bg-white/10 text-white border-white/20',
       icon: '🌳'
     },
     {
@@ -51,7 +51,7 @@ const Projects = () => {
       description: 'An AI-powered symptom checker embedded into cl1nical. Gives preliminary assessments and routes patients to the right specialist.',
       technologies: ['AI/ML', 'PHP', 'REST API', 'WhatsApp'],
       badge: 'AI Integration',
-      badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+      badgeColor: 'bg-[#d9ff3a]/10 text-[#d9ff3a] border-[#d9ff3a]/30',
       icon: '🤖'
     },
     {
@@ -62,7 +62,7 @@ const Projects = () => {
       description: 'Internal tools built for client transparency: file sharing, payment tracking, approval workflows, and real-time status updates.',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'Tailwind'],
       badge: 'Multiple Clients',
-      badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+      badgeColor: 'bg-white/10 text-white border-white/20',
       icon: '📊'
     },
     {
@@ -73,7 +73,7 @@ const Projects = () => {
       description: 'Over 100 projects shipped for founders and small businesses across Pakistan. From landing pages to full-scale web applications.',
       technologies: ['PHP', 'WordPress', 'Tailwind', 'MySQL'],
       badge: '100+ Shipped',
-      badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+      badgeColor: 'bg-[#d9ff3a]/15 text-[#d9ff3a] border-[#d9ff3a]/30',
       icon: '🌐'
     }
   ];
@@ -106,7 +106,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('all')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'all' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'all' ? 'bg-[#d9ff3a] text-black shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               All (6)
@@ -114,7 +114,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('saas')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'saas' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'saas' ? 'bg-[#d9ff3a] text-black shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               SaaS
@@ -122,7 +122,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('web')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'web' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'web' ? 'bg-[#d9ff3a] text-black shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               Web
@@ -130,7 +130,7 @@ const Projects = () => {
             <button
               onClick={() => setFilter('ai')}
               className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                filter === 'ai' ? 'bg-[#0245ec] text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                filter === 'ai' ? 'bg-[#d9ff3a] text-black shadow-lg' : 'text-gray-400 hover:text-white'
               }`}
             >
               AI
@@ -199,7 +199,7 @@ const Projects = () => {
             href="https://www.linkedin.com/in/abdulhannan-projects/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 text-white font-bold text-xs sm:text-sm hover:border-[#0245ec] transition-all duration-300 shadow-xl group"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-[#d9ff3a]/10 to-transparent border border-[#d9ff3a]/30 text-white font-bold text-xs sm:text-sm hover:border-[#d9ff3a] transition-all duration-300 shadow-xl group"
           >
             <span>View All Projects on LinkedIn</span>
             <span className="text-base sm:text-lg group-hover:translate-x-1 transition-transform">↗</span>

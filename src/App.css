@@ -1,7 +1,7 @@
 /* Global CSS overrides */
 ::selection {
-  background-color: #0326fc;
-  color: #ffffff;
+  background-color: #d9ff3a;
+  color: #000000;
 }
 
 /* Custom scrollbar styling */
@@ -19,5 +19,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0326fc;
+  background: #d9ff3a;
 }

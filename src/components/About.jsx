@@ -2,13 +2,13 @@ import stackImage from '../assets/about/image.jpg';
 
 const About = () => {
   return (
-    <section id="about" className="bg-[#0245ec] pt-16 sm:pt-20 pb-24 sm:pb-40 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans">
+    <section id="about" className="bg-black pt-16 sm:pt-20 pb-24 sm:pb-40 px-4 sm:px-6 md:px-12 w-full relative overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 sm:gap-12 lg:gap-16 items-start">
         
         {/* Left Side: ID Badge */}
         <div className="flex flex-col items-center w-full md:w-[300px] lg:w-[350px] shrink-0 mt-8 md:mt-0">
           <div data-aos="drop-bounce" className="relative flex justify-center w-full">
-            <div className="absolute -top-24 sm:-top-32 left-1/2 w-3 h-32 sm:h-40 bg-black transform -translate-x-1/2 shadow-inner z-0"></div>
+            <div className="absolute -top-24 sm:-top-32 left-1/2 w-3 h-32 sm:h-40 bg-[#d9ff3a] transform -translate-x-1/2 shadow-inner z-0"></div>
             <div className="absolute -top-5 sm:-top-6 left-1/2 w-5 sm:w-6 h-10 sm:h-12 bg-gray-300 rounded border border-gray-400 transform -translate-x-1/2 z-10 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"></div>
             
             <div className="bg-gray-900 w-full max-w-[240px] sm:max-w-[280px] rounded-2xl p-3 sm:p-4 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative z-20 transform -rotate-2 hover:rotate-0 transition-transform duration-500 text-white">
@@ -26,10 +26,10 @@ const About = () => {
 
               <div className="text-center">
                 <h4 className="text-base sm:text-lg font-black text-white uppercase tracking-wider">Abdul Hannan</h4>
-                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">Software Engineer</p>
+                <p className="text-[10px] sm:text-xs font-bold text-[#d9ff3a] uppercase tracking-widest mt-0.5">Founder @hannanlabs</p>
                 <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/10 flex justify-between text-[10px] sm:text-[11px] text-gray-400 font-mono">
-                  <span>ID: AH-2026X</span>
-                  <span className="text-emerald-400 font-bold">● ACTIVE</span>
+                  <span>ID: AH-2024X</span>
+                  <span className="text-[#d9ff3a] font-bold">● ACTIVE</span>
                 </div>
               </div>
             </div>
@@ -38,47 +38,51 @@ const About = () => {
 
         {/* Right Side: Bio */}
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-6 md:mt-0 relative z-20 min-w-0">
-          <div className="inline-block px-3 sm:px-4 py-1 rounded-full bg-black text-white text-[10px] sm:text-xs font-black tracking-widest uppercase mb-3 sm:mb-4">
+          <div className="inline-block px-3 sm:px-4 py-1 rounded-full bg-[#d9ff3a] text-black text-[10px] sm:text-xs font-black tracking-widest uppercase mb-3 sm:mb-4">
             About Me
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-3 sm:mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-3 sm:mb-4 leading-tight">
             Hi, I'm Abdul Hannan
           </h2>
 
-          <p className="text-[#000] font-black text-base sm:text-xl mb-2 sm:mb-3 uppercase tracking-wide">
-            Software Engineer | Co-founder @think2ship
+          <p className="text-[#d9ff3a] font-black text-base sm:text-xl mb-1 sm:mb-1.5 uppercase tracking-wide">
+            Founder @hannanlabs
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
-            I taught myself to code in 2022 with no CS degree and no bootcamp, just a laptop and way too much stubbornness. That stubbornness turned into a career fast: freelance PHP work that never stopped, and before I knew it, I had shipped over 100 projects and won 7 hackathons.
+          <p className="text-white/50 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3 sm:mb-4">
+            Co-founder @think2ship · Founder @cl1nical
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-blue-100 max-w-3xl">
-            My go-to stack is <strong className="text-black font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals.
+          <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-white/70 max-w-3xl">
+            I taught myself to code in 2022 with no CS degree and no bootcamp, just a laptop and way too much stubbornness. That stubbornness turned into a career fast: freelance PHP work that never stopped, and before I knew it, I had shipped over 100 projects and won 7 hackathons. In November 2024, that work became <strong className="text-white font-black">hannanlabs</strong>, my independent product studio.
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base font-medium mb-6 sm:mb-8 leading-relaxed text-blue-100 max-w-3xl">
+          <p className="text-xs sm:text-sm md:text-base font-medium mb-3 sm:mb-4 leading-relaxed text-white/70 max-w-3xl">
+            My go-to stack is <strong className="text-white font-black">PHP, MySQL, Tailwind, and vanilla JavaScript</strong>. I sprinkle in AI wherever it genuinely solves a problem, not just to slap it on a pitch deck. I've built everything from clinic management platforms to student job portals.
+          </p>
+
+          <p className="text-xs sm:text-sm md:text-base font-medium mb-6 sm:mb-8 leading-relaxed text-white/70 max-w-3xl">
             What drives me is building software that actually works for real people, especially non-technical teams who just need things to run smoothly. If that sounds like your kind of project, let's talk.
           </p>
 
           {/* Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 bg-black/20 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/10">
             <div className="flex flex-col">
-              <span className="text-[10px] sm:text-xs text-white/60 font-bold uppercase tracking-wider">Location</span>
+              <span className="text-[10px] sm:text-xs text-white/50 font-bold uppercase tracking-wider">Location</span>
               <span className="text-xs sm:text-sm font-bold text-white">Karachi, Sindh, Pakistan</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] sm:text-xs text-white/60 font-bold uppercase tracking-wider">Email</span>
+              <span className="text-[10px] sm:text-xs text-white/50 font-bold uppercase tracking-wider">Email</span>
               <a href="mailto:projects.abdulhannan@gmail.com" className="text-xs sm:text-sm font-bold text-white hover:underline break-all">projects.abdulhannan@gmail.com</a>
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] sm:text-xs text-white/60 font-bold uppercase tracking-wider">Phone</span>
+              <span className="text-[10px] sm:text-xs text-white/50 font-bold uppercase tracking-wider">Phone</span>
               <a href="tel:+923171243725" className="text-xs sm:text-sm font-bold text-white hover:underline">+92 317 1243 725</a>
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] sm:text-xs text-white/60 font-bold uppercase tracking-wider">Top Skills</span>
-              <span className="text-xs sm:text-sm font-bold text-white">PAAS, Website Building, AI Products</span>
+              <span className="text-[10px] sm:text-xs text-white/50 font-bold uppercase tracking-wider">Top Skills</span>
+              <span className="text-xs sm:text-sm font-bold text-white">Product Studios, AI Agencies, SaaS</span>
             </div>
           </div>
 
@@ -87,7 +91,7 @@ const About = () => {
             href="https://www.instagram.com/hannanbuilds/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex items-center justify-between bg-black text-white p-4 sm:p-5 rounded-2xl border border-white/20 hover:bg-gray-950 transition-all duration-300 group shadow-xl"
+            className="flex items-center justify-between bg-white/5 text-white p-4 sm:p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group shadow-xl"
           >
             <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl sm:text-2xl shrink-0">
@@ -95,43 +99,155 @@ const About = () => {
               </div>
               <div className="min-w-0">
                 <div className="text-[10px] sm:text-xs text-gray-400 font-medium">Follow on Instagram</div>
-                <div className="text-sm sm:text-base font-black text-white group-hover:text-[#0245ec] transition-colors truncate">@hannanbuilds ↗</div>
+                <div className="text-sm sm:text-base font-black text-white group-hover:text-[#d9ff3a] transition-colors truncate">@hannanbuilds ↗</div>
               </div>
             </div>
-            <div className="hidden sm:flex px-4 py-2 rounded-full bg-white/10 text-xs font-bold text-white group-hover:bg-[#0245ec] shrink-0">
+            <div className="hidden sm:flex px-4 py-2 rounded-full bg-white/10 text-xs font-bold text-white group-hover:bg-[#d9ff3a] group-hover:text-black shrink-0">
               Follow
             </div>
           </a>
 
-          {/* think2ship Section */}
-          <div className="bg-black/40 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-[#d9ff3a]/20 mt-2">
-            <div className="flex items-center gap-2.5 mb-3">
-              <span className="text-xl">🚀</span>
-              <h3 className="text-base sm:text-lg font-black text-[#d9ff3a] tracking-tight">think2ship</h3>
+          {/* Ventures & Products */}
+          <div className="mt-8 sm:mt-10">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1 mb-3 sm:mb-4">
+              <h3 className="text-base sm:text-lg font-black text-white tracking-tight">Ventures & Products</h3>
+              <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-white/40">Built by Abdul Hannan</span>
             </div>
-            <p className="text-[11px] sm:text-xs text-blue-100 leading-relaxed mb-2">
-              think2ship is a product studio I started with Saad Kamal. Most founders do not need more advice — they need the product to exist. We do not start with code. We start with your problem. We listen, ask questions, and only then do we build the product that solves it.
-            </p>
-            <p className="text-[11px] sm:text-xs text-blue-100 leading-relaxed mb-4">
-              We build AI products, SaaS platforms, and web applications for founders who want a team that moves fast and builds it properly. Founded in 2024.
-            </p>
-            <div className="flex flex-wrap gap-2.5">
-              <a 
-                href="https://think2ship.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a] text-black text-[10px] sm:text-xs font-black hover:bg-[#c4e633] transition-all duration-300 shadow-lg hover:shadow-[0_8px_25px_rgba(217,255,58,0.3)]"
-              >
-                🌐 Website ↗
-              </a>
-              <a 
-                href="https://www.instagram.com/think2ship/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a]/10 border border-[#d9ff3a]/30 text-[#d9ff3a] text-[10px] sm:text-xs font-black hover:bg-[#d9ff3a]/20 transition-all duration-300"
-              >
-                📸 Instagram ↗
-              </a>
+
+            <div className="grid grid-cols-1 gap-4 sm:gap-5">
+              {/* hannanlabs */}
+              <div className="bg-[#d9ff3a] text-black rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(217,255,58,0.12)]">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-black text-[#d9ff3a] flex items-center justify-center text-lg sm:text-xl font-black shrink-0">
+                      hb
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-black tracking-tight">hannanlabs</h3>
+                      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-black/60">Independent Product Studio</p>
+                    </div>
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-black text-[#d9ff3a] px-2.5 sm:px-3 py-1 rounded-full">
+                    Since Nov 2024
+                  </span>
+                </div>
+
+                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-black/70 mb-2">
+                  Founder @hannanlabs
+                </p>
+
+                <p className="text-[11px] sm:text-xs leading-relaxed mb-2">
+                  hannanlabs is my independent product studio, built in Pakistan for clients worldwide. We build the software that makes an owner's day easier and faster, so the business can take on more clients — SaaS products, web apps, dashboards and websites, mapped around how the business already works.
+                </p>
+                <p className="text-[11px] sm:text-xs leading-relaxed mb-4">
+                  50+ projects since 2024, 25+ of them for businesses. It is also where my own products live: cl1nical (live), worthhype (in development) and Talent Tree (paused at almost 12,000 users).
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
+                  <span className="px-2.5 py-1 text-[9px] sm:text-[10px] font-black rounded-full bg-black/10 border border-black/15">Map → Build → Stay</span>
+                  <span className="px-2.5 py-1 text-[9px] sm:text-[10px] font-black rounded-full bg-black/10 border border-black/15">50+ projects</span>
+                  <span className="px-2.5 py-1 text-[9px] sm:text-[10px] font-black rounded-full bg-black/10 border border-black/15">25+ businesses</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2.5">
+                  <a 
+                    href="https://hannanlabs.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black text-[#d9ff3a] text-[10px] sm:text-xs font-black hover:bg-gray-900 transition-all duration-300 shadow-lg"
+                  >
+                    🌐 Website ↗
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/hannanlabs_/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/10 border border-black/20 text-black text-[10px] sm:text-xs font-black hover:bg-black/20 transition-all duration-300"
+                  >
+                    📸 Instagram ↗
+                  </a>
+                </div>
+              </div>
+
+              {/* think2ship */}
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl sm:text-2xl shrink-0">
+                      🚀
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-black text-white tracking-tight">think2ship</h3>
+                      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-white/40">AI Agency</p>
+                    </div>
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#d9ff3a] text-black px-2.5 sm:px-3 py-1 rounded-full">
+                    Since Apr 2026
+                  </span>
+                </div>
+
+                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-[#d9ff3a] mb-2">
+                  Co-founder & Software Engineer
+                </p>
+
+                <p className="text-[11px] sm:text-xs text-white/60 leading-relaxed mb-4">
+                  think2ship is an AI agency. We help founders and businesses use AI to build and ship products, websites and internal tools. It is a focused AI agency, not a product studio.
+                </p>
+
+                <div className="flex flex-wrap gap-2.5">
+                  <a 
+                    href="https://think2ship.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a] text-black text-[10px] sm:text-xs font-black hover:bg-[#c4e633] transition-all duration-300 shadow-lg"
+                  >
+                    🌐 Website ↗
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/think2ship/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a]/10 border border-[#d9ff3a]/30 text-[#d9ff3a] text-[10px] sm:text-xs font-black hover:bg-[#d9ff3a]/20 transition-all duration-300"
+                  >
+                    📸 Instagram ↗
+                  </a>
+                </div>
+              </div>
+
+              {/* cl1nical */}
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl sm:text-2xl shrink-0">
+                      🏥
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-black text-white tracking-tight">cl1nical</h3>
+                      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-white/40">Healthcare Product</p>
+                    </div>
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#d9ff3a] text-black px-2.5 sm:px-3 py-1 rounded-full">
+                    Since Jan 2026
+                  </span>
+                </div>
+
+                <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-[#d9ff3a] mb-2">
+                  Founder
+                </p>
+
+                <p className="text-[11px] sm:text-xs text-white/60 leading-relaxed mb-4">
+                  cl1nical is an AI-powered clinic management platform built under hannanlabs. It connects appointments, patient records, prescriptions, billing and analytics into one workflow, with an AI symptom checker and WhatsApp integration.
+                </p>
+
+                <a 
+                  href="https://clinic-flow-landingpage.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#d9ff3a] text-black text-[10px] sm:text-xs font-black hover:bg-[#c4e633] transition-all duration-300 shadow-lg"
+                >
+                  🏥 View Product ↗
+                </a>
+              </div>
             </div>
           </div>
 
@@ -145,7 +261,7 @@ const About = () => {
         </svg>
       </div>
 
-      <div className="absolute top-10 right-10 md:right-20 text-black opacity-20 animate-pulse hidden sm:block">
+      <div className="absolute top-10 right-10 md:right-20 text-[#d9ff3a] opacity-20 animate-pulse hidden sm:block">
         <svg className="w-12 sm:w-16 h-12 sm:h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>
       </div>
     </section>

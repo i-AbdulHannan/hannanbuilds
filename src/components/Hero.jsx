@@ -51,8 +51,8 @@ const Hero = () => {
         <div className="flex flex-col items-start text-left max-w-lg lg:max-w-xl w-full">
           
           <div data-aos="fade-up" data-aos-delay="50" className="mb-2 sm:mb-3 flex items-center gap-2">
-            <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-[10px] sm:text-xs md:text-sm font-bold tracking-widest text-emerald-400 uppercase">Available for work</span>
+            <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#d9ff3a] animate-pulse"></span>
+            <span className="text-[10px] sm:text-xs md:text-sm font-bold tracking-widest text-[#d9ff3a] uppercase">Available for work</span>
           </div>
 
           <h1 
@@ -61,10 +61,18 @@ const Hero = () => {
             className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-5 tracking-tight leading-[1.05]"
           >
             Hi, I'm <br /> 
-            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#0245ec] drop-shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
+            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#d9ff3a] drop-shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
               Abdul Hannan
             </span>
           </h1>
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="text-[#d9ff3a] text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.2em] mb-3 sm:mb-4"
+          >
+            Founder @hannanlabs
+          </p>
 
           <p 
             data-aos="fade-up"
